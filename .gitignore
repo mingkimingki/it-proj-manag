@@ -1,0 +1,8 @@
+# Lingkungan Python (bisa dibuat ulang)
+.venv/
+__pycache__/
+*.pyc
+
+# Berkas kunci sementara Word / LibreOffice
+~$*
+.~lock*
