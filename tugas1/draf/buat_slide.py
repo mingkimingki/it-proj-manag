@@ -1,13 +1,15 @@
-"""Membuat slide presentasi Tugas 1 (Analisis Distribusi Effort — Phoenix Pay), 10 menit.
+"""Membuat slide presentasi Tugas 1 (Analisis Distribusi Effort — Phoenix Pay), 5 menit.
 
-Versi untuk audiens awam: istilah diganti kata sehari-hari (istilah asli dalam kurung),
-ada slide "Istilah kunci", kotak "Istilah di slide ini", dan slide cadangan "Daftar istilah".
+7 slide dipresentasikan (±45–60 detik per slide) + 2 slide cadangan (daftar istilah, daftar pustaka).
+Versi untuk audiens awam: istilah diganti kata sehari-hari (istilah asli dalam kurung).
+Logo Amikom di slide judul (kanan atas) dan pojok kiri bawah slide lainnya.
 
 Jalankan dengan venv mata kuliah (berisi python-pptx):
     ../../.venv/bin/python buat_slide.py
 
 Hasil: ../hasil/Tugas1_DistribusiEffort_Phoenix_Slide.pptx
-Diagram diambil dari ../hasil/*.png (buat dulu dengan buat_diagram.py).
+Butuh: ../hasil/*_slide.png (buat dulu dengan buat_diagram.py) dan ../sumber/logo_amikom.png.
+Semua angka uang dalam dolar Kanada (C$).
 """
 from pathlib import Path
 
@@ -17,7 +19,9 @@ from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Inches, Pt
 
-HASIL = Path(__file__).resolve().parent.parent / "hasil"
+TUGAS = Path(__file__).resolve().parent.parent
+HASIL = TUGAS / "hasil"
+LOGO = TUGAS / "sumber" / "logo_amikom.png"
 OUT = HASIL / "Tugas1_DistribusiEffort_Phoenix_Slide.pptx"
 
 PUTIH = RGBColor(0xFF, 0xFF, 0xFF)
@@ -29,7 +33,7 @@ BIRU = RGBColor(0x2A, 0x78, 0xD6)
 BIRU_MUDA = RGBColor(0xEA, 0xF2, 0xFC)
 MERAH = RGBColor(0xD0, 0x3B, 0x3B)
 MERAH_MUDA = RGBColor(0xFB, 0xEA, 0xEA)
-ABU_MUDA = RGBColor(0xF3, 0xF3, 0xF1)   # latar kotak "Istilah"
+ABU_MUDA = RGBColor(0xF3, 0xF3, 0xF1)
 JUDUL_FONT, ISI_FONT = "Cambria", "Calibri"
 
 prs = Presentation()
@@ -102,7 +106,7 @@ def istilah(slide, x, y, w, h, pasangan, size=13):
     teks(slide, x + 0.15, y + 0.08, w - 0.3, h - 0.16, baris, size=size, color=TINTA, space_after=3)
 
 
-def slide_baru(judul=None, catatan="", tampil_nomor=True):
+def slide_baru(judul=None, catatan="", judul_slide=False):
     s = prs.slides.add_slide(KOSONG)
     s.background.fill.solid()
     s.background.fill.fore_color.rgb = PUTIH
@@ -110,7 +114,10 @@ def slide_baru(judul=None, catatan="", tampil_nomor=True):
     if judul:
         teks(s, 0.6, 0.35, 12.1, 0.9, judul, size=32, bold=True, color=NAVY, font=JUDUL_FONT,
              anchor=MSO_ANCHOR.MIDDLE)
-    if tampil_nomor:
+    if judul_slide:
+        s.shapes.add_picture(str(LOGO), Inches(11.55), Inches(0.45), height=Inches(1.1))
+    else:
+        s.shapes.add_picture(str(LOGO), Inches(0.35), Inches(6.98), height=Inches(0.4))
         teks(s, 12.2, 7.0, 0.8, 0.35, str(nomor["n"]), size=11, color=REDUP, align=PP_ALIGN.RIGHT)
     if catatan:
         s.notes_slide.notes_text_frame.text = catatan
@@ -118,13 +125,13 @@ def slide_baru(judul=None, catatan="", tampil_nomor=True):
 
 
 # =============== 1. Judul ===============
-s = slide_baru(tampil_nomor=False, catatan=(
-    "Selamat pagi/siang. Saya akan membahas mengapa sebuah proyek sistem gaji pemerintah Kanada, bernama Phoenix, "
-    "gagal. Fokusnya bagaimana tenaga dan waktu proyek, yang disebut effort, dibagi ke lima kelompok kegiatan "
-    "pengelolaan proyek: memulai, merencanakan, mengerjakan, memeriksa, dan menutup."))
-teks(s, 0.9, 1.3, 11.5, 0.5, "TUGAS 1 — IT PROJECT MANAGEMENT", size=16, bold=True, color=BIRU)
-teks(s, 0.9, 1.85, 11.5, 1.5, ["Analisis Distribusi Effort Proyek:", "Studi Kasus Phoenix Pay System (Kanada)"],
-     size=36, bold=True, color=NAVY, font=JUDUL_FONT, space_after=0)
+s = slide_baru(judul_slide=True, catatan=(
+    "Selamat pagi/siang. Saya membahas mengapa proyek sistem gaji pemerintah Kanada, Phoenix, gagal. "
+    "Fokusnya: bagaimana tenaga dan waktu proyek, atau effort, dibagi ke lima kelompok kegiatan pengelolaan "
+    "proyek."))
+teks(s, 0.9, 1.3, 10.4, 0.5, "TUGAS 1 — IT PROJECT MANAGEMENT", size=16, bold=True, color=BIRU)
+teks(s, 0.9, 1.85, 10.4, 1.5, ["Analisis Distribusi Effort Proyek:", "Studi Kasus Phoenix Pay System (Kanada)"],
+     size=32, bold=True, color=NAVY, font=JUDUL_FONT, space_after=0)
 teks(s, 0.9, 3.45, 11.5, 0.8,
      "Mengapa sistem gaji untuk 290.000 pegawai pemerintah gagal, dilihat dari pembagian tenaga dan waktu (effort) proyek",
      size=18, italic=True, color=ABU)
@@ -142,163 +149,70 @@ teks(s, 9.9, 4.7, 3.0, 1.8, [
     "Dosen: Emha Taufiq Luthfi, Ph.D.",
 ], size=13, color=TINTA, space_after=2)
 
-# =============== 2. Apa & mengapa ===============
-s = slide_baru("Apa yang dianalisis dan mengapa Phoenix?", catatan=(
-    "Pertanyaannya: bagaimana tenaga dan waktu proyek dibagi, apakah seimbang, dan apakah ketidakseimbangan itu "
-    "menjelaskan kegagalan. Saya memilih Phoenix karena tiga hal: ada pemeriksaan resmi dari lembaga pemeriksa negara "
-    "Kanada, setara BPK; pemeriksa memakai buku standar PMBOK yang juga materi kuliah kita; dan laporannya berisi "
-    "angka konkret."))
-kotak(s, 0.6, 1.55, 5.2, 4.0, fill=BIRU_MUDA)
-teks(s, 0.95, 1.85, 4.6, 0.5, "PERTANYAAN ANALISIS", size=14, bold=True, color=BIRU)
-teks(s, 0.95, 2.4, 4.6, 3.0, [
-    "Bagaimana tenaga dan waktu (effort) proyek dibagi ke lima kelompok kegiatan?",
-    "Apakah pembagiannya seimbang?",
-    "Apakah ketidakseimbangan itu menjelaskan kegagalan proyek?",
-], size=18, color=TINTA, space_after=14)
-alasan = [
-    ("Diperiksa resmi", "OAG, lembaga pemeriksa keuangan negara Kanada (seperti BPK), menerbitkan laporan lengkap pada 2018."),
-    ("Kerangka sama dengan kuliah", "Pemeriksa memakai PMBOK Guide, buku standar pengelolaan proyek yang juga materi kuliah."),
-    ("Angkanya konkret", "Ada data berapa fitur dibuang, berapa pengujian gagal, dan berapa bulan jadwal dipadatkan."),
-]
-for i, (h, d) in enumerate(alasan):
-    y = 1.6 + i * 1.65
-    lingkaran_nomor(s, 6.3, y + 0.1, i + 1)
-    teks(s, 7.05, y, 5.7, 0.45, h, size=20, bold=True, color=NAVY)
-    teks(s, 7.05, y + 0.5, 5.7, 1.0, d, size=16, color=ABU)
-
-# =============== 3. Istilah kunci (baru) ===============
-s = slide_baru("Enam istilah kunci", catatan=(
-    "Sebelum masuk ke kasus, enam istilah yang akan sering muncul. Effort adalah tenaga dan waktu. Process group adalah "
-    "lima kelompok kegiatan pengelolaan proyek. Pilot adalah uji coba di satu tempat dulu. Go-live adalah saat sistem "
-    "mulai dipakai sungguhan. Waterfall berarti dikerjakan berurutan dan diluncurkan sekaligus, sedangkan Agile "
-    "dikerjakan dalam putaran pendek yang hasilnya langsung dicoba pengguna."))
-kunci = [
-    ("Effort", "Tenaga dan waktu yang dipakai untuk mengerjakan proyek"),
-    ("Process group", "Lima kelompok kegiatan mengelola proyek: memulai, merencanakan, mengerjakan, memeriksa, menutup"),
-    ("Uji coba (pilot)", "Mencoba sistem baru di satu tempat dulu sebelum dipakai semua"),
-    ("Go-live", "Saat sistem baru mulai dipakai sungguhan"),
-    ("Waterfall", "Dikerjakan berurutan: rencana lengkap, bangun, uji, lalu diluncurkan sekaligus"),
-    ("Agile", "Dikerjakan dalam putaran pendek (1–4 minggu); tiap putaran langsung dicoba pengguna"),
-]
-for i, (h, d) in enumerate(kunci):
-    x = 0.6 + (i % 3) * 4.1
-    y = 1.5 + (i // 3) * 2.6
-    kotak(s, x, y, 3.9, 2.35, fill=BIRU_MUDA)
-    teks(s, x + 0.3, y + 0.25, 3.3, 0.55, h, size=22, bold=True, color=BIRU, font=JUDUL_FONT)
-    teks(s, x + 0.3, y + 0.9, 3.3, 1.35, d, size=16, color=TINTA)
-
-# =============== 4. Teori ===============
-s = slide_baru("Lima kelompok kegiatan dan angka pembanding", catatan=(
-    "Menurut PMBOK, ada lima kelompok kegiatan. Yang penting: kelimanya berjalan bersamaan sepanjang proyek, bukan "
-    "bergiliran. Kegiatan memeriksa berjalan dari awal sampai akhir. Sebagai pembanding, saya pakai data Crowe dari slide "
-    "kuliah: manajer proyek terbaik memakai 21 persen waktunya untuk merencanakan, manajer lain hanya 11 persen dan "
-    "lebih banyak mengerjakan. Ini data survei, jadi hanya menunjukkan kecenderungan."))
-kelompok = [
-    ("Initiating", "memulai", "Memutuskan proyek dikerjakan dan tujuannya"),
-    ("Planning", "merencanakan", "Apa, kapan, berapa biaya, apa risikonya"),
-    ("Executing", "mengerjakan", "Membangun sistem sesuai rencana"),
-    ("Monitoring &\nControlling", "memeriksa", "Memeriksa, menguji, memperbaiki penyimpangan"),
-    ("Closing", "menutup", "Menyerahkan hasil, mengevaluasi"),
-]
-for i, (h, arti, d) in enumerate(kelompok):
-    x = 0.6 + i * 2.45
-    kotak(s, x, 1.45, 2.25, 2.55, fill=BIRU_MUDA)
-    lingkaran_nomor(s, x + 0.2, 1.6, i + 1, d=0.45, size=15)
-    teks(s, x + 0.2, 2.1, 1.95, 0.8, [h, [(arti, {"italic": True, "color": BIRU, "bold": False, "size": 14})]],
-         size=15, bold=True, color=NAVY, space_after=0)
-    teks(s, x + 0.2, 3.0, 1.95, 0.95, d, size=13, color=ABU, space_after=0)
-teks(s, 0.6, 4.1, 12.1, 0.45,
-     "Kelimanya berjalan bersamaan sepanjang proyek, bukan bergiliran; kegiatan memeriksa berlangsung dari awal sampai akhir.",
-     size=15, italic=True, color=ABU)
-tbl = s.shapes.add_table(3, 6, Inches(0.6), Inches(4.7), Inches(8.6), Inches(1.5)).table
-isi_tbl = [["Porsi waktu manajer proyek", "Mulai", "Rencana", "Kerja", "Periksa", "Tutup"],
-           ["Manajer proyek terbaik (Alpha)", "2%", "21%", "69%", "5%", "3%"],
-           ["Manajer proyek lain", "1%", "11%", "82%", "4%", "2%"]]
-for j, w in enumerate([3.3, 1.06, 1.06, 1.06, 1.06, 1.06]):
-    tbl.columns[j].width = Inches(w)
-for i, row in enumerate(isi_tbl):
-    for j, v in enumerate(row):
-        c = tbl.cell(i, j)
-        c.fill.solid()
-        c.fill.fore_color.rgb = NAVY if i == 0 else (PUTIH if i == 2 else BIRU_MUDA)
-        c.text = ""
-        p = c.text_frame.paragraphs[0]
-        p.alignment = PP_ALIGN.LEFT if j == 0 else PP_ALIGN.CENTER
-        r = p.add_run(); r.text = v
-        r.font.name, r.font.size = ISI_FONT, Pt(14)
-        r.font.bold = (i == 0) or (j == 2)
-        r.font.color.rgb = PUTIH if i == 0 else TINTA
-istilah(s, 9.45, 4.7, 3.3, 2.1, [
-    ("Alpha", "sekitar 2% manajer proyek terbaik"),
-    ("Sumber", "survei Crowe (2006), slide kuliah; menunjukkan kecenderungan, bukan bukti sebab-akibat"),
-])
-
-# =============== 5. Kasus dalam angka ===============
-s = slide_baru("Phoenix Pay dalam angka", catatan=(
-    "Phoenix adalah sistem gaji untuk sekitar 290 ribu pegawai di 101 kementerian dan lembaga Kanada, dibangun oleh "
-    "perusahaan IBM. Masalah bermula dari uang: anggaran yang disetujui 155 juta dolar, padahal biayanya diperkirakan "
-    "274 juta. Sistem tetap dipakai pada 2016. Setahun kemudian, lebih dari 520 juta dolar gaji salah atau terlambat, "
-    "dan separuh pegawai menerima slip gaji yang salah."))
+# =============== 2. Kasus dan alasan ===============
+s = slide_baru("Phoenix Pay: kasusnya dan mengapa dipilih", catatan=(
+    "Phoenix adalah sistem gaji untuk 290 ribu pegawai di 101 lembaga Kanada, dibangun IBM. Uang yang disetujui "
+    "155 juta dolar Kanada, padahal biayanya ternyata 274 juta. Sistem tetap dipakai 2016; setahun kemudian lebih dari "
+    "520 juta dolar gaji salah atau terlambat. Saya memilih kasus ini karena diperiksa resmi oleh lembaga pemeriksa "
+    "negara Kanada, setara BPK, yang memakai buku PMBOK seperti materi kuliah kita."))
 angka = [
-    ("290.000", "pegawai di 101 kementerian/lembaga digaji lewat Phoenix", BIRU, BIRU_MUDA),
-    ("US$155 jt → 274 jt", "uang yang disetujui vs biaya yang ternyata dibutuhkan (+77%)", BIRU, BIRU_MUDA),
-    ("> US$520 jt", "gaji salah atau terlambat dibayar (Juni 2017)", MERAH, MERAH_MUDA),
-    ("51%", "pegawai menerima slip gaji yang salah (April 2017)", MERAH, MERAH_MUDA),
+    ("290.000", "pegawai di 101 lembaga digaji lewat Phoenix", BIRU, BIRU_MUDA),
+    ("C$155 → 274 jt", "uang disetujui vs biaya yang ternyata dibutuhkan", BIRU, BIRU_MUDA),
+    ("> C$520 jt", "gaji salah atau terlambat (Juni 2017)", MERAH, MERAH_MUDA),
+    ("51%", "pegawai menerima slip gaji salah (April 2017)", MERAH, MERAH_MUDA),
 ]
 for i, (big, small, warna, latar) in enumerate(angka):
-    x = 0.6 + (i % 2) * 6.15
-    y = 1.5 + (i // 2) * 2.45
-    kotak(s, x, y, 5.95, 2.2, fill=latar)
-    teks(s, x + 0.35, y + 0.25, 5.3, 1.0, big, size=40, bold=True, color=warna, font=JUDUL_FONT)
-    teks(s, x + 0.35, y + 1.3, 5.3, 0.75, small, size=17, color=TINTA)
-teks(s, 0.6, 6.5, 12.1, 0.45,
-     "Mulai dipakai: 24 Feb 2016 (34 lembaga) dan 21 Apr 2016 (67 lembaga). Pembangun: IBM. Sumber: OAG Kanada (2018).",
+    x = 0.6 + (i % 2) * 3.95
+    y = 1.45 + (i // 2) * 2.5
+    kotak(s, x, y, 3.75, 2.3, fill=latar)
+    teks(s, x + 0.25, y + 0.25, 3.3, 0.9, big, size=30, bold=True, color=warna, font=JUDUL_FONT)
+    teks(s, x + 0.25, y + 1.15, 3.3, 1.0, small, size=16, color=TINTA)
+kotak(s, 8.65, 1.45, 4.1, 4.8, fill=PUTIH, line=BIRU)
+teks(s, 8.9, 1.65, 3.6, 0.5, "Mengapa kasus ini?", size=19, bold=True, color=BIRU)
+teks(s, 8.9, 2.25, 3.6, 3.9, [
+    [("Diperiksa resmi ", {"bold": True}), ("oleh OAG, lembaga pemeriksa negara Kanada (seperti BPK), 2018.", {})],
+    [("Kerangka sama dengan kuliah: ", {"bold": True}), ("pemeriksa memakai PMBOK Guide.", {})],
+    [("Angkanya konkret: ", {"bold": True}), ("fitur dibuang, pengujian gagal, jadwal dipadatkan.", {})],
+], size=16, color=TINTA, space_after=12)
+teks(s, 0.6, 6.4, 8.0, 0.45, "C$ = dolar Kanada. Pembangun sistem: IBM. Sumber: OAG Kanada (2018).",
      size=13, color=REDUP)
 
-# =============== 6. Lini waktu ===============
+# =============== 3. Lini waktu ===============
 s = slide_baru("Lini waktu: pemeriksaan yang dilewati", catatan=(
-    "Titik biru adalah kejadian penting proyek; tanda silang merah adalah pemeriksaan yang seharusnya dilakukan tetapi "
-    "dilewati. 2012: biaya ternyata jauh lebih besar, tetapi rencana tidak disusun ulang; lebih dari 100 fitur dibuang. "
-    "2015: uji coba dibatalkan. 2016: saran untuk meluncurkan bertahap dan menjalankan sistem lama bersama sistem baru "
-    "diabaikan, keputusan mulai memakai sistem tidak dicatat, dan jeda antar tahap dipersingkat dari tujuh ke dua bulan."))
-s.shapes.add_picture(str(HASIL / "Tugas1_DistribusiEffort_Phoenix_Diagram2_LiniWaktu.png"),
-                     Inches(0.5), Inches(1.35), width=Inches(9.0))
-istilah(s, 9.75, 1.45, 3.0, 4.6, [
-    ("Pilot", "uji coba di satu tempat dulu"),
-    ("Parallel run", "sistem lama dan baru dijalankan bersamaan, hasilnya dibandingkan"),
-    ("Go-live", "mulai dipakai sungguhan"),
-    ("Phase gate", "pemeriksaan sebelum lanjut ke tahap berikutnya"),
-    ("Gartner", "perusahaan konsultan teknologi"),
-])
+    "Titik biru adalah kejadian proyek; tanda silang merah adalah pemeriksaan yang dilewati. 2012: biaya membengkak "
+    "tetapi rencana tidak disusun ulang, lebih dari 100 fitur dibuang. 2015: uji coba dibatalkan. Panel kanan "
+    "memperbesar awal 2016: saran untuk meluncurkan bertahap diabaikan, sistem dilaporkan siap tanpa keputusan tertulis, "
+    "dan jeda antartahap hanya dua bulan dari rencana tujuh."))
+s.shapes.add_picture(str(HASIL / "Tugas1_DistribusiEffort_Phoenix_Diagram2_LiniWaktu_slide.png"),
+                     Inches(0.97), Inches(1.3), width=Inches(11.4))
 
-# =============== 7. Distribusi effort ===============
+# =============== 4. Pembagian effort ===============
 s = slide_baru("Pembagian effort: Phoenix vs angka pembanding", catatan=(
-    "Batang biru dan oranye adalah data pembanding dari Crowe; batang hijau berarsir adalah perkiraan saya untuk Phoenix, "
-    "berdasarkan temuan pemeriksa. Phoenix memakai sekitar 8 persen untuk merencanakan, lebih kecil dari manajer biasa; "
-    "86 persen untuk mengerjakan; dan hanya sekitar 3 persen untuk memeriksa dan menguji. Ini perkiraan, bukan hasil "
-    "ukur, tetapi polanya jelas."))
-s.shapes.add_picture(str(HASIL / "Tugas1_DistribusiEffort_Phoenix_Diagram1_Effort.png"),
-                     Inches(0.5), Inches(1.4), width=Inches(8.6))
-kotak(s, 9.35, 1.45, 3.4, 3.55, fill=BIRU_MUDA)
-teks(s, 9.6, 1.6, 3.0, 3.3, [
-    [("Merencanakan ~8%", {"bold": True, "color": NAVY, "size": 19})],
-    "lebih kecil dari manajer terbaik (21%) dan manajer lain (11%)",
-    [("Mengerjakan ~86%", {"bold": True, "color": NAVY, "size": 19})],
-    "paling besar",
-    [("Memeriksa & menguji ~3%", {"bold": True, "color": MERAH, "size": 19})],
-    "dikurangi tepat sebelum dipakai",
-], size=14, color=ABU, space_after=3)
-istilah(s, 9.35, 5.15, 3.4, 1.65, [
-    ("Estimasi", "perkiraan penulis dari laporan pemeriksa, bukan hasil ukur"),
-    ("M&C", "Monitoring & Controlling = memeriksa"),
-], size=12)
+    "Pengelolaan proyek punya lima kelompok kegiatan: memulai, merencanakan, mengerjakan, memeriksa, dan menutup, yang "
+    "berjalan bersamaan. Batang biru dan oranye adalah survei Crowe dari slide kuliah: manajer terbaik merencanakan "
+    "21 persen. Batang hijau berarsir adalah perkiraan saya untuk Phoenix: merencanakan 8 persen, mengerjakan 86 persen, "
+    "memeriksa hanya 3 persen. Angkanya perkiraan, tetapi polanya jelas."))
+s.shapes.add_picture(str(HASIL / "Tugas1_DistribusiEffort_Phoenix_Diagram1_Effort_slide.png"),
+                     Inches(0.45), Inches(1.35), width=Inches(8.4))
+kotak(s, 9.1, 1.45, 3.65, 2.75, fill=BIRU_MUDA)
+teks(s, 9.3, 1.58, 3.3, 2.6, [
+    [("Lima kelompok kegiatan", {"bold": True, "color": NAVY, "size": 16})],
+    "Memulai · merencanakan · mengerjakan · memeriksa · menutup",
+    [("Berjalan bersamaan sepanjang proyek, bukan bergiliran.", {"italic": True, "color": ABU})],
+], size=15, color=TINTA, space_after=6)
+kotak(s, 9.1, 4.35, 3.65, 2.35, fill=MERAH_MUDA)
+teks(s, 9.3, 4.48, 3.3, 2.2, [
+    [("Phoenix (perkiraan)", {"bold": True, "color": MERAH, "size": 16})],
+    [("Merencanakan ", {}), ("~8%", {"bold": True})],
+    [("Mengerjakan ", {}), ("~86%", {"bold": True})],
+    [("Memeriksa & menguji ", {}), ("~3%", {"bold": True, "color": MERAH})],
+], size=16, color=TINTA, space_after=3)
 
-# =============== 8. Tiga ketimpangan ===============
+# =============== 5. Tiga ketidakseimbangan ===============
 s = slide_baru("Tiga ketidakseimbangan penyebab kegagalan", catatan=(
-    "Ada tiga ketidakseimbangan. Pertama, ketika biaya naik 77 persen, rencana tidak disusun ulang; yang dilakukan hanya "
-    "membuang fitur. Kedua, pemeriksaan dan pengujian dikurangi justru saat paling dibutuhkan: 20 persen fitur yang gagal "
-    "diuji tidak diuji ulang, dan uji coba dibatalkan. Ini terjadi karena waktu dan biaya dikunci, sehingga yang "
-    "dikorbankan adalah mutu. Ketiga, tidak ada pemeriksaan sebelum lanjut ke tahap kedua."))
+    "Pertama, saat biaya naik 77 persen, rencana tidak disusun ulang; yang dilakukan membuang fitur. Kedua, pemeriksaan "
+    "dan pengujian dikurangi justru saat paling dibutuhkan: fitur yang gagal diuji tidak diuji ulang. Tanggal dan uang "
+    "dikunci, jadi mutu yang dikorbankan. Ketiga, tidak ada pemeriksaan sebelum lanjut ke tahap kedua."))
 kolom = [
     ("1", "Rencana tidak disusun ulang", "+77%",
      "biaya naik, tetapi yang dilakukan hanya membuang lebih dari 100 fitur", BIRU, BIRU_MUDA),
@@ -314,18 +228,16 @@ for i, (n, h, big, d, warna, latar) in enumerate(kolom):
     teks(s, x + 0.3, 2.3, 3.3, 0.95, h, size=19, bold=True, color=NAVY)
     teks(s, x + 0.3, 3.2, 3.3, 0.85, big, size=34, bold=True, color=warna, font=JUDUL_FONT)
     teks(s, x + 0.3, 4.1, 3.3, 1.3, d, size=15, color=TINTA)
-istilah(s, 0.6, 5.65, 12.15, 1.2, [
+istilah(s, 0.6, 5.62, 12.15, 1.2, [
     ("Fitur", "kemampuan sistem, misalnya menghitung lembur atau gaji rapel"),
     ("Mengapa mutu dikorbankan", "tanggal dan uang dikunci, jadi yang dikurangi adalah isi pekerjaan dan pengujian (triple constraint)"),
 ], size=13)
 
-# =============== 9. Waterfall vs Agile ===============
+# =============== 6. Waterfall vs Agile ===============
 s = slide_baru("Waterfall vs Agile: cara kerja mana yang cocok?", catatan=(
-    "Phoenix dikerjakan cara Waterfall: rencana lengkap dulu, dibangun, lalu diluncurkan sekaligus. Dalam cara ini "
-    "pengujian menumpuk di akhir, sehingga paling mudah dikurangi saat jadwal mepet. Agile membagi pekerjaan jadi "
-    "putaran pendek yang langsung diuji. Untuk Phoenix, yang paling cocok adalah gabungan atau hybrid: bagian dasar "
-    "direncanakan lengkap, peluncuran bertahap per lembaga sambil menjalankan sistem lama, dan fitur yang belum jelas "
-    "dikerjakan dalam putaran pendek."))
+    "Phoenix memakai Waterfall: rencana lengkap, dibangun, lalu diluncurkan sekaligus, sehingga pengujian menumpuk di "
+    "akhir dan mudah dikurangi. Agile bekerja dalam putaran pendek yang langsung diuji. Untuk Phoenix yang cocok adalah "
+    "gabungan, atau hybrid: bagian dasar direncanakan lengkap, peluncuran bertahap sambil sistem lama tetap jalan."))
 segmen = [("Waterfall (berurutan)", BIRU_MUDA, NAVY), ("Hybrid (gabungan)", BIRU, PUTIH), ("Agile (putaran pendek)", BIRU_MUDA, NAVY)]
 for i, (lbl, latar, warna_teks) in enumerate(segmen):
     k = kotak(s, 0.6 + i * 4.1, 1.45, 3.9, 0.75, fill=latar)
@@ -356,57 +268,36 @@ istilah(s, 0.6, 5.65, 12.15, 1.2, [
     ("Alasan hybrid (PMBOK 7)", "risiko tinggi & aturan ketat → perlu rencana matang; kebutuhan belum pasti & bisa per lembaga → bertahap"),
 ], size=13)
 
-# =============== 10. Rekomendasi ===============
-s = slide_baru("Rekomendasi untuk proyek serupa", catatan=(
-    "Lima rekomendasi utama. Satu, buktikan dulu perkiraan manfaat dengan data nyata. Dua, kalau biaya atau jadwal "
-    "melenceng jauh, rencana wajib disusun ulang dan dilaporkan. Tiga, uji coba dan menjalankan sistem lama bersama "
-    "sistem baru tidak boleh dihapus. Empat, harus ada pemeriksa dari luar tim proyek yang lapor langsung ke pimpinan. "
-    "Lima, keputusan mulai memakai sistem dicatat tertulis. Catatan: cara kerja Agile saja tidak menyelesaikan "
-    "masalah pengawasan seperti ini."))
+# =============== 7. Rekomendasi & pelajaran ===============
+s = slide_baru("Rekomendasi dan pelajaran utama", catatan=(
+    "Empat rekomendasi: buktikan perkiraan manfaat dengan data; bila biaya melenceng jauh, wajib rencana baru dan lapor; "
+    "uji coba dan menjalankan sistem lama bersama yang baru tidak boleh dihapus; dan ada pemeriksa dari luar tim yang "
+    "lapor ke pimpinan, termasuk keputusan tertulis sebelum sistem dipakai. Pelajarannya: tanggal peluncuran tidak boleh "
+    "lebih kuat daripada bukti kesiapan. Pola serupa terjadi di bank TSB dan Coretax, dan relevan untuk BMKG. "
+    "Terima kasih."))
 rek = [
-    ("Memulai", "Buktikan perkiraan manfaat dengan data nyata sebelum proyek disetujui"),
-    ("Merencanakan", "Bila biaya/jadwal melenceng jauh: wajib rencana baru dan lapor ke pemberi dana"),
-    ("Memeriksa", "Uji coba dan menjalankan sistem lama-baru bersamaan tidak boleh dihapus"),
-    ("Memeriksa", "Ada pemeriksa dari luar tim proyek (audit internal) yang lapor langsung ke pimpinan"),
-    ("Menutup", "Keputusan mulai memakai sistem dicatat tertulis: syarat jelas, siapa yang memutuskan"),
+    ("Memulai", "Buktikan perkiraan manfaat dengan data nyata"),
+    ("Merencanakan", "Biaya/jadwal melenceng jauh → wajib rencana baru & lapor"),
+    ("Memeriksa", "Uji coba dan sistem lama-baru berjalan bersamaan tidak boleh dihapus"),
+    ("Memeriksa & menutup", "Pemeriksa dari luar tim lapor ke pimpinan; keputusan mulai pakai dicatat tertulis"),
 ]
 for i, (pg, r) in enumerate(rek):
-    y = 1.45 + i * 0.98
+    y = 1.45 + i * 1.18
     lingkaran_nomor(s, 0.6, y + 0.1, i + 1)
-    teks(s, 1.35, y + 0.1, 1.9, 0.5, pg, size=15, bold=True, color=BIRU)
-    teks(s, 3.25, y + 0.05, 5.45, 0.9, r, size=16, color=TINTA)
-kotak(s, 9.0, 1.5, 3.75, 4.55, fill=MERAH_MUDA)
-teks(s, 9.3, 1.75, 3.2, 0.6, "Catatan penting", size=18, bold=True, color=MERAH)
-teks(s, 9.3, 2.4, 3.2, 3.5, [
-    "Cara kerja Agile saja tidak menyelesaikan semua masalah Phoenix.",
-    "Masalah pengawasan (siapa mengawasi, siapa berhak memutuskan) tetap bisa terjadi dengan cara kerja apa pun.",
-    "Yang dibutuhkan: pemeriksa yang tidak memihak.",
-], size=15, color=TINTA, space_after=8)
+    teks(s, 1.35, y + 0.02, 6.2, 0.45, pg, size=15, bold=True, color=BIRU)
+    teks(s, 1.35, y + 0.42, 6.2, 0.75, r, size=16, color=TINTA)
+kotak(s, 7.9, 1.45, 4.85, 4.75, fill=BIRU_MUDA)
+teks(s, 8.15, 1.6, 4.35, 0.45, "PELAJARAN UTAMA", size=14, bold=True, color=BIRU)
+teks(s, 8.15, 2.05, 4.35, 2.0, "Tanggal peluncuran tidak boleh lebih kuat daripada bukti kesiapan",
+     size=24, bold=True, color=NAVY, font=JUDUL_FONT)
+teks(s, 8.15, 4.05, 4.35, 2.1, [
+    [("Pola serupa: ", {"bold": True}), ("bank TSB, Inggris (2018) dan Coretax DJP (2025).", {})],
+    [("Catatan: ", {"bold": True}), ("cara kerja Agile saja tidak cukup; tetap perlu pemeriksa yang tidak memihak.", {})],
+    [("Relevan untuk BMKG ", {"bold": True}), ("dan proyek TI pemerintah lain.", {})],
+], size=14, color=TINTA, space_after=5)
 
-# =============== 11. Pelajaran ===============
-s = slide_baru(catatan=(
-    "Kesimpulannya satu kalimat: tanggal peluncuran tidak boleh lebih kuat daripada bukti kesiapan. Pola yang sama "
-    "terjadi di bank TSB di Inggris tahun 2018 dan pada sistem pajak Coretax tahun 2025. Bagi proyek TI pemerintah di "
-    "Indonesia, termasuk peralihan sistem pengamatan cuaca di BMKG tempat saya bekerja, pelajarannya sama. Terima kasih."))
-teks(s, 0.9, 1.0, 11.5, 0.5, "PELAJARAN UTAMA", size=16, bold=True, color=BIRU)
-teks(s, 0.9, 1.55, 11.5, 2.0, "Tanggal peluncuran tidak boleh lebih kuat daripada bukti kesiapan",
-     size=40, bold=True, color=NAVY, font=JUDUL_FONT)
-pola = [
-    ("Phoenix Pay, Kanada (2016)", "Uji coba dibatalkan, pengujian dikurangi, keputusan mulai pakai tidak dicatat"),
-    ("Bank TSB, Inggris (2018)", "Tanggal ditetapkan dulu, pekerjaan dipaksa muat; pengujian dipadatkan (pengawas keuangan Inggris/FCA, 2022)"),
-    ("Coretax DJP, Indonesia (2025)", "Sistem pajak baru: gangguan login dan faktur saat banyak pengguna serentak (slide kuliah)"),
-]
-for i, (h, d) in enumerate(pola):
-    x = 0.9 + i * 3.95
-    kotak(s, x, 3.85, 3.7, 2.35, fill=BIRU_MUDA)
-    teks(s, x + 0.25, 4.05, 3.2, 0.7, h, size=16, bold=True, color=NAVY)
-    teks(s, x + 0.25, 4.75, 3.2, 1.4, d, size=14, color=TINTA)
-teks(s, 0.9, 6.45, 11.3, 0.5,
-     "Relevan untuk proyek TI pemerintah di Indonesia, termasuk peralihan sistem pengamatan cuaca di BMKG.",
-     size=15, italic=True, color=ABU)
-
-# =============== 12. Daftar istilah (cadangan) ===============
-s = slide_baru("Daftar istilah (cadangan)", catatan="Slide cadangan untuk menjawab pertanyaan; tidak perlu dipresentasikan.")
+# =============== 8. Daftar istilah (cadangan) ===============
+s = slide_baru("Daftar istilah (cadangan)", catatan="Slide cadangan untuk menjawab pertanyaan; tidak dipresentasikan.")
 glos = [
     ("Effort", "tenaga dan waktu proyek"),
     ("Process group", "5 kelompok kegiatan mengelola proyek"),
@@ -415,7 +306,7 @@ glos = [
     ("Executing", "mengerjakan: membangun sistem"),
     ("Monitoring & Controlling", "memeriksa, menguji, memperbaiki"),
     ("Closing", "menutup: serah terima, evaluasi"),
-    ("PMBOK Guide", "buku standar pengelolaan proyek"),
+    ("PMBOK Guide", "buku standar pengelolaan proyek (PMI)"),
     ("OAG", "lembaga pemeriksa negara Kanada (seperti BPK)"),
     ("Uji coba (pilot)", "dicoba di satu tempat dulu"),
     ("Parallel run", "sistem lama dan baru jalan bersamaan"),
@@ -425,7 +316,7 @@ glos = [
     ("Agile", "putaran pendek, langsung dicoba pengguna"),
     ("Hybrid", "gabungan Waterfall dan Agile"),
     ("Triple constraint", "3 batasan: isi pekerjaan, waktu, biaya"),
-    ("Audit internal", "pemeriksa di dalam instansi, lapor ke pimpinan"),
+    ("C$", "dolar Kanada"),
 ]
 for k, bagian in enumerate((glos[:9], glos[9:])):
     tbl = s.shapes.add_table(len(bagian), 2, Inches(0.6 + k * 6.2), Inches(1.4), Inches(5.95), Inches(5.2)).table
@@ -440,9 +331,9 @@ for k, bagian in enumerate((glos[:9], glos[9:])):
             r.font.name, r.font.size, r.font.bold = ISI_FONT, Pt(13), (j == 0)
             r.font.color.rgb = NAVY if j == 0 else TINTA
 
-# =============== 13. Daftar pustaka ===============
-s = slide_baru("Daftar Pustaka", catatan="Slide cadangan; tidak perlu dipresentasikan.")
-teks(s, 0.6, 1.4, 12.1, 5.5, [
+# =============== 9. Daftar pustaka ===============
+s = slide_baru("Daftar Pustaka", catatan="Slide cadangan; tidak dipresentasikan.")
+teks(s, 0.6, 1.4, 12.1, 5.3, [
     "Crowe, A. (2006). Alpha project managers: What the top 2% know that everyone else does not. Velociteach.",
     "Financial Conduct Authority. (2022). Final notice: TSB Bank plc. https://www.fca.org.uk/publication/final-notices/tsb-bank-plc-2022.pdf",
     "Luthfi, E. T. (2026). IT project management: Pertemuan 4 [Slide perkuliahan]. Program Studi S2 Informatika, Universitas Amikom Yogyakarta.",
