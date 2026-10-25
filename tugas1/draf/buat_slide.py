@@ -146,7 +146,7 @@ teks(s, 9.9, 4.7, 3.0, 1.8, [
     [("Nama: ", {"bold": True}), ("EKA PUTRA KURNIA", {})],
     [("NIM: ", {"bold": True}), ("25.55.2927", {})],
     "S2 Informatika — Universitas Amikom Yogyakarta",
-    "Dosen: Emha Taufiq Luthfi, Ph.D.",
+    "Dosen: Melwin Syafrizal, Ph.D.",
 ], size=13, color=TINTA, space_after=2)
 
 # =============== 2. Kasus dan alasan ===============

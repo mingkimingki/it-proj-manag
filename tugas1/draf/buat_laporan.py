@@ -179,7 +179,7 @@ for _ in range(5):
     doc.add_paragraph()
 for baris in ("Nama: EKA PUTRA KURNIA", "NIM: 25.55.2927",
               "Program Studi S2 Informatika — Universitas Amikom Yogyakarta",
-              "Dosen Pengampu: Emha Taufiq Luthfi, S.T., M.Kom., Ph.D.",
+              "Dosen Pengampu: Melwin Syafrizal, S.Kom., M.Eng., Ph.D.",
               "Semester Ganjil 2026/2027 — Oktober 2026"):
     p(baris, align=WD_ALIGN_PARAGRAPH.CENTER)
 

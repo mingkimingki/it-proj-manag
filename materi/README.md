@@ -1,7 +1,8 @@
 # Materi Kuliah — IT Project Management
 
 Program Studi S2 Informatika, Universitas Amikom Yogyakarta — Semester Ganjil 2026/2027
-Dosen pengampu: Emha Taufiq Luthfi, S.T., M.Kom., Ph.D.
+Dosen pengampu: Melwin Syafrizal, S.Kom., M.Eng., Ph.D.  
+Slide Pertemuan 4 oleh Emha Taufiq Luthfi, S.T., M.Kom., Ph.D.
 
 ## Tujuan folder
 
