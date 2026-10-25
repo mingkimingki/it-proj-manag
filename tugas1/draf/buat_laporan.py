@@ -177,7 +177,7 @@ sub = doc.add_paragraph(); sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
 r = sub.add_run("Tugas 1 — IT Project Management"); r.font.size = Pt(14)
 for _ in range(5):
     doc.add_paragraph()
-for baris in ("Nama: [[isi nama]]", "NIM: [[isi NIM]]",
+for baris in ("Nama: EKA PUTRA KURNIA", "NIM: 25.55.2927",
               "Program Studi S2 Informatika — Universitas Amikom Yogyakarta",
               "Dosen Pengampu: Emha Taufiq Luthfi, S.T., M.Kom., Ph.D.",
               "Semester Ganjil 2026/2027 — Oktober 2026"):
