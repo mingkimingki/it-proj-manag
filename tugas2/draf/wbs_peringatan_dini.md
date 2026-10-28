@@ -3,7 +3,7 @@
 
 > Berkas kerja (draf), disusun bertahap:
 > **Tahap 1: lingkup + WBS (berkas ini)** → Tahap 2: jadwal (durasi, ketergantungan, milestone, jalur kritis) → Tahap 3: Risk Register → Tahap 4: penyatuan ke PDF dan ClickUp.
-> Bagian bertanda **[TENTUKAN]** perlu diputuskan kelompok.
+> Keputusan dasar (28 Oktober 2026): 6 perangkat di 3 wilayah DIY, durasi ±4 bulan, sponsor BPBD, tim proyek simulasi 5 orang.
 > Aturan penulisan: istilah asing dijelaskan saat pertama muncul dan dikumpulkan di Glosarium.
 
 ---
@@ -47,7 +47,7 @@ Istilah dalam diagram:
 
 ### 1.3 Tujuan (SMART)
 
-Dalam **[TENTUKAN: ±4 bulan]**, memasang dan mengoperasikan **[TENTUKAN: 6]** perangkat peringatan audio-visual di **[TENTUKAN: 3]** wilayah percontohan. Perangkat harus menyala **paling lambat 10 menit** setelah wilayahnya muncul di halaman peringatan dini BMKG.
+Dalam **±4 bulan**, memasang dan mengoperasikan **6** perangkat peringatan audio-visual di **3** wilayah percontohan. Perangkat harus menyala **paling lambat 10 menit** setelah wilayahnya muncul di halaman peringatan dini BMKG.
 
 *SMART*: tujuan yang Spesifik, Terukur (*Measurable*), Dapat dicapai (*Achievable*), Relevan, dan Berbatas waktu (*Time-bound*).
 
@@ -56,7 +56,7 @@ Contoh wilayah percontohan (DIY, dekat kampus): Kota Yogyakarta, Kab. Sleman, Ka
 ### 1.4 Hasil yang diserahkan (*deliverables*)
 
 1. Server berisi modul pemantau BMKG, pencocok wilayah, pengelola status, MQTT broker, dan dasbor admin
-2. **[TENTUKAN: 6]** unit perangkat IoT audio-visual yang terpasang di lokasi
+2. **6** unit perangkat IoT audio-visual yang terpasang di lokasi
 3. Daftar wilayah sasaran beserta variasi namanya
 4. Dokumen: spesifikasi kebutuhan, desain sistem, laporan uji, manual operator, dan SOP
 5. Pelatihan operator dan sosialisasi ke warga
@@ -73,9 +73,9 @@ Contoh wilayah percontohan (DIY, dekat kampus): Kota Yogyakarta, Kab. Sleman, Ka
 
 ### 1.6 Batasan (*constraints*)
 
-- Durasi: **[TENTUKAN: ±4 bulan]**
-- Tim: **[TENTUKAN: 4–5 orang]**
-- Anggaran: **[TENTUKAN]**
+- Durasi: **±4 bulan**
+- Tim proyek: **5 orang** untuk 6 peran; Engineer IoT merangkap Teknisi Lapangan (pekerjaan keduanya tidak bertabrakan di jadwal). Tim ini adalah **simulasi skenario**, berbeda dengan kelompok mahasiswa penyusun dokumen
+- Anggaran: belum dirinci (di luar permintaan tugas)
 - Sumber data hanya halaman publik BMKG; tidak ada kerja sama data resmi
 
 ### 1.7 Asumsi (*assumptions*)
@@ -92,7 +92,7 @@ Contoh wilayah percontohan (DIY, dekat kampus): Kota Yogyakarta, Kab. Sleman, Ka
 
 | Pihak | Peran |
 |---|---|
-| BPBD / pemda **[TENTUKAN]** | *Sponsor* (pendana dan pemilik sistem) dan operator |
+| BPBD | *Sponsor* (pendana dan pemilik sistem) dan operator |
 | Warga di sekitar perangkat | Pengguna akhir yang menerima peringatan |
 | Pemilik lokasi pemasangan | Pemberi izin dan penyedia listrik |
 | BMKG | Sumber data, **bukan** pihak dalam proyek |
@@ -111,7 +111,7 @@ Contoh wilayah percontohan (DIY, dekat kampus): Kota Yogyakarta, Kab. Sleman, Ka
 | 4 | Halaman BMKG gagal dimuat | Status tidak berubah; admin menerima tanda |
 | 5 | Perangkat mati/terputus terdeteksi di dasbor | ≤ 5 menit |
 | 6 | Perangkat tetap bekerja saat listrik padam | ≥ 4 jam dengan baterai cadangan |
-| 7 | Pesan panel LED terbaca di siang hari | Dari jarak **[TENTUKAN: 20 m]** |
+| 7 | Pesan panel LED terbaca di siang hari | Dari jarak 20 m |
 
 ### 1.10 Pendekatan pengerjaan
 
@@ -295,7 +295,7 @@ Firmware ditulis dengan C++ di VS Code + PlatformIO, boleh dibantu Claude Code, 
 | 1.6.2 | Firmware C++ | Koneksi jaringan, berlangganan topik MQTT, kendali panel LED, relay lampu, dan audio | Firmware versi 1 | EI |
 | 1.6.3 | Fitur heartbeat dan sambung ulang otomatis | Mengirim heartbeat; menyambung ulang otomatis saat jaringan putus | Firmware versi akhir | EI |
 | 1.6.4 | Fitur diagnosa jarak jauh | Perangkat melaporkan kondisi daya, koneksi, dan keluaran; admin dapat menjalankan uji diri dari dasbor | Firmware dengan fitur diagnosa | EI |
-| 1.6.5 | Perakitan unit produksi | Merakit **[TENTUKAN: 6]** unit di dalam *enclosure* tahan air | Unit siap pasang | EI |
+| 1.6.5 | Perakitan unit produksi | Merakit **6** unit di dalam *enclosure* tahan air | Unit siap pasang | EI |
 
 ### 1.7 Pengujian
 
@@ -325,14 +325,13 @@ Setiap pengujian berjalan dengan pola **uji → perbaiki → uji ulang**. Penguj
 
 ---
 
-## 4. Yang perlu diputuskan kelompok sebelum Tahap 2
+## 4. Keputusan dasar (28 Oktober 2026)
 
-1. Jumlah perangkat dan wilayah percontohan (usulan: 6 perangkat di 3 wilayah DIY)
-2. Durasi target proyek (usulan: ±4 bulan)
-3. Siapa sponsornya (usulan: BPBD)
-4. Jumlah anggota tim dan pembagian peran (MP, AS, PS, EI, QA, TL)
-5. Interval pengecekan halaman BMKG (usulan: 5 menit; dipakai untuk kriteria "≤ 10 menit")
-
+1. Jumlah perangkat dan wilayah percontohan: 6 perangkat di 3 wilayah DIY
+2. Durasi target proyek: ±4 bulan
+3. Sponsor: BPBD
+4. Tim proyek (simulasi): 5 orang untuk 6 peran (MP, AS, PS, EI, QA, TL); EI merangkap TL
+5. Interval pengecekan halaman BMKG: 5 menit (dasar kriteria "≤ 10 menit")
 ---
 
 ## Glosarium

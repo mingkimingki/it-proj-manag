@@ -3,7 +3,7 @@
 
 > Berkas kerja (draf), disusun bertahap:
 > Tahap 1: lingkup + WBS (`wbs_peringatan_dini.md`) → **Tahap 2: jadwal (berkas ini)** → Tahap 3: Risk Register → Tahap 4: penyatuan ke PDF dan ClickUp.
-> Dasar: keputusan 28 Oktober 2026, yaitu 6 perangkat di 3 wilayah DIY, durasi target ±4 bulan, sponsor BPBD, dan tim 4–5 orang.
+> Dasar: keputusan 28 Oktober 2026, yaitu 6 perangkat di 3 wilayah DIY, durasi target ±4 bulan, sponsor BPBD, dan tim proyek simulasi 5 orang (Engineer IoT merangkap Teknisi Lapangan).
 > **[USULAN]** Semua angka durasi (O, M, P) adalah perkiraan awal dari Claude. Kelompok boleh mengubahnya; jadwal lalu dihitung ulang.
 
 ---
