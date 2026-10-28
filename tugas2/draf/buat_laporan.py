@@ -13,6 +13,7 @@ Berkas .md adalah satu-satunya sumber isi. Markup yang dikenali:
     <!-- SAMPUL ... -->                 data sampul (kunci: nilai)
     <!-- LANDSCAPE --> / <!-- PORTRAIT -->   ganti orientasi halaman
     <!-- GANTT -->, <!-- MATRIKS_AWAL -->, <!-- MATRIKS_RESIDUAL -->   dibuat dari tabel jadwal dan Risk Register
+    <!-- DIAGRAM_WBS -->                diagram pohon WBS, dibuat dari kamus WBS (Lampiran A)
 """
 import math
 import re
@@ -238,6 +239,49 @@ for c in ambil_tabel("| ID | Kategori"):
     RISIKO.append(dict(id=bersih(c[0]), k=int(c[4]), d=int(c[5]), k2=k2, d2=d2))
 
 
+FASE = []   # [(kode, nama, [(kode_wp, nama_wp), ...]), ...]
+for c in ambil_tabel("| Kode | Work package | Uraian |"):
+    kode, nama = bersih(c[0]), bersih(c[1])
+    if kode.count(".") == 1:
+        FASE.append((kode, nama, []))
+    else:
+        FASE[-1][2].append((kode, nama))
+
+
+def diagram_wbs():
+    jumlah_wp = sum(len(f[2]) for f in FASE)
+    judul_tabel(f"Gambar 3.1 Diagram WBS (3 level, {len(FASE)} fase, {jumlah_wp} work package)")
+    t = doc.add_table(rows=3, cols=len(FASE))
+    t.style = "Table Grid"
+    t.alignment = WD_TABLE_ALIGNMENT.CENTER
+    t.autofit = False
+    puncak = t.cell(0, 0).merge(t.cell(0, len(FASE) - 1))
+    r = puncak.paragraphs[0].add_run("1  Sistem Peringatan Dini Cuaca Publik (SPDC)")
+    r.bold = True; r.font.size = Pt(13); r.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF)
+    arsir(puncak, "1F4E79")
+    for j, (kode, nama, wps) in enumerate(FASE):
+        isi_runs(t.cell(1, j).paragraphs[0], f"**{kode}**\n**{nama}**", 10)
+        arsir(t.cell(1, j), "BDD7EE")
+        sel_wp = t.cell(2, j)
+        for n, (kode_wp, nama_wp) in enumerate(wps):
+            par = sel_wp.paragraphs[0] if n == 0 else sel_wp.add_paragraph()
+            isi_runs(par, f"**{kode_wp}** {nama_wp}", 9.5)
+            par.paragraph_format.space_after = Pt(6)
+    atur_lebar(t, [int(lebar_isi() / len(FASE))] * len(FASE))
+    for baris_t in t.rows[:2]:
+        for c in baris_t.cells:
+            for par in c.paragraphs:
+                par.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                par.paragraph_format.space_after = Pt(2)
+                par.paragraph_format.space_before = Pt(2)
+    for c in t.rows[2].cells:
+        for par in c.paragraphs:
+            par.paragraph_format.line_spacing = 1.0
+    p("Baris atas = level 1 (proyek), baris tengah = level 2 (fase), kolom bawah = level 3 (*work package*). "
+      "WBS menunjukkan pemecahan pekerjaan, bukan urutan; urutan pekerjaan ditunjukkan oleh jadwal (Bab 4).",
+      align=WD_ALIGN_PARAGRAPH.CENTER, ukuran=10)
+
+
 def level(nilai):
     return "Kritikal" if nilai >= 20 else "Tinggi" if nilai >= 13 else "Sedang" if nilai >= 6 else "Rendah"
 
@@ -388,6 +432,8 @@ while i < len(baris):
             baru_ganti_halaman = True
         elif isi_k == "GANTT":
             gantt(); baru_ganti_halaman = False
+        elif isi_k == "DIAGRAM_WBS":
+            diagram_wbs(); baru_ganti_halaman = False
         elif isi_k in ("MATRIKS_AWAL", "MATRIKS_RESIDUAL"):
             matriks(isi_k == "MATRIKS_RESIDUAL"); baru_ganti_halaman = False
         elif isi_k.startswith("tabel:"):

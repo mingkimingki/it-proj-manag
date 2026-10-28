@@ -14,7 +14,7 @@ header: Rencana Proyek SPDC — Tugas Kelompok IT Project Management
 <!--
 Draf laporan Tugas 2 (berkas sumber). Dokumen .docx dan .pdf dibuat dari berkas ini oleh buat_laporan.py.
 Tabel lampiran, Risk Register, dan respons rinci diambil dari draf Tahap 1–3 (wbs_, jadwal_, risiko_peringatan_dini.md).
-Penanda khusus untuk skrip: LANDSCAPE / PORTRAIT (ganti orientasi halaman), GANTT, MATRIKS_AWAL, MATRIKS_RESIDUAL,
+Penanda khusus untuk skrip: LANDSCAPE / PORTRAIT (ganti orientasi halaman), DIAGRAM_WBS, GANTT, MATRIKS_AWAL, MATRIKS_RESIDUAL,
 "tabel: judul | lebar: persen,..." (judul dan lebar kolom tabel berikutnya).
 -->
 
@@ -128,6 +128,14 @@ Dokumen ini merupakan hasil kelompok proses *Planning* (perencanaan) dalam PMBOK
 WBS adalah pemecahan **seluruh** pekerjaan proyek secara bertingkat menjadi bagian yang makin kecil. Elemen terbawahnya disebut *work package* (paket kerja), yaitu pekerjaan yang dapat ditugaskan, diperkirakan durasinya, dan dipantau. WBS proyek SPDC terdiri atas **3 level, 8 fase, dan 43 *work package*** dan disusun per fase, mengikuti pola PMBOK edisi ke-4 Gambar 5-9.
 
 WBS disusun dengan **aturan 100%** (PMBOK 4, Bagian 5.3): semua pekerjaan yang diperlukan masuk ke WBS, termasuk pekerjaan yang sering terlupa, seperti manajemen proyek (1.1), pengadaan dan izin (1.4), *deploy* server (1.8.2), sosialisasi warga (1.8.4), dan pelatihan operator (1.8.5). Milestone tidak dimasukkan ke WBS karena bukan pekerjaan, melainkan penanda waktu di jadwal. Uraian, hasil, dan penanggung jawab setiap *work package* dimuat dalam kamus WBS (Lampiran A).
+
+WBS disajikan dalam dua bentuk yang sama-sama dipakai dalam PMBOK: **diagram pohon** (Gambar 3.1) dan **daftar bertingkat** (Tabel 3.1).
+
+<!-- LANDSCAPE -->
+
+<!-- DIAGRAM_WBS -->
+
+<!-- PORTRAIT -->
 
 <!-- tabel: Tabel 3.1 Struktur WBS (3 level) | lebar: 12,10,78 -->
 | Kode | Level | Elemen WBS |
