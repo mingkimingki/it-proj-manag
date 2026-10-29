@@ -592,3 +592,13 @@ Baris tebal menandai aktivitas di jalur kritis. O = optimis, M = paling mungkin,
 | **M5** | **◆ Sistem diserahterimakan** | | | | | **0** | 1.8.6 | 89 | 89 | 89 | 89 | **0** |
 | **1.1.4** | **Penutupan proyek dan lessons learned** | 2 | 3 | 4 | 3,00 | **3** | M5 | 89 | 92 | 89 | 92 | **0** |
 | **M6** | **◆ Proyek ditutup** | | | | | **0** | 1.1.4 | 92 | 92 | 92 | 92 | **0** |
+
+# Lampiran C. Bukti ClickUp
+
+WBS dan jadwal dalam laporan ini juga disusun di ClickUp (paket gratis). Fase dimasukkan sebagai tugas dan *work package* sebagai subtugas (tugas di dalam tugas), ditambah 6 milestone dan 65 ketergantungan FS. Hari kerja ke-n diubah menjadi tanggal kalender mulai Senin, 4 Januari 2027 (Senin–Jumat; hari libur nasional tidak dihitung), sehingga proyek berakhir Selasa, 11 Mei 2027. Gambar C.1 dan C.2 adalah tangkapan layar tampilan Gantt dengan fitur jalur kritis ClickUp dinyalakan. Kolom kiri memperlihatkan hierarki WBS 3 level (proyek, fase, *work package*), sedangkan garis penghubung antarbatang adalah ketergantungan.
+
+Batang merah adalah jalur kritis yang dihitung sendiri oleh ClickUp dari tanggal dan ketergantungan. Hasilnya **sama dengan perhitungan CPM di Lampiran B**: ke-21 *work package* dengan *float* nol serta milestone M1, M2, M4, M5, dan M6 berwarna merah, sedangkan aktivitas yang memiliki *float* (misalnya seluruh fase 1.5, 1.4.4, dan M3) berwarna abu-abu. Perbandingan dilakukan pada tingkat *work package* dan milestone; batang fase hanya meringkas rentang waktu subtugasnya.
+
+![Gambar C.1 Gantt Chart di ClickUp, bagian atas (fase 1.1 sampai 1.5)](../clickup/bukti/01_gantt_atas.png)
+
+![Gambar C.2 Gantt Chart di ClickUp, bagian bawah (fase 1.5 sampai 1.8 dan milestone)](../clickup/bukti/02_gantt_bawah.png)

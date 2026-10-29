@@ -14,6 +14,7 @@ Berkas .md adalah satu-satunya sumber isi. Markup yang dikenali:
     <!-- LANDSCAPE --> / <!-- PORTRAIT -->   ganti orientasi halaman
     <!-- GANTT -->, <!-- MATRIKS_AWAL -->, <!-- MATRIKS_RESIDUAL -->   dibuat dari tabel jadwal dan Risk Register
     <!-- DIAGRAM_WBS -->                diagram pohon WBS, dibuat dari kamus WBS (Lampiran A)
+    ![keterangan](jalur)                gambar selebar halaman; jalur relatif terhadap folder ini
 """
 import math
 import re
@@ -282,6 +283,13 @@ def diagram_wbs():
       align=WD_ALIGN_PARAGRAPH.CENTER, ukuran=10)
 
 
+def gambar(keterangan, jalur):
+    judul_tabel(keterangan)
+    par = doc.add_paragraph()
+    par.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    par.add_run().add_picture(str((DRAF / jalur).resolve()), width=lebar_isi())
+
+
 def level(nilai):
     return "Kritikal" if nilai >= 20 else "Tinggi" if nilai >= 13 else "Sedang" if nilai >= 6 else "Rendah"
 
@@ -323,7 +331,7 @@ def gantt():
                 par.paragraph_format.line_spacing = 1.0
     ulang_header(t)
     p("Satu kolom mewakili satu minggu (5 hari kerja); aktivitas pendek yang melewati pergantian minggu tampil di dua "
-      "kolom. Gantt versi harian tersedia di berkas ClickUp.", ukuran=10)
+      "kolom. Gantt versi harian tersedia di ClickUp (Lampiran C).", ukuran=10)
 
 
 def matriks(residual):
@@ -468,6 +476,13 @@ while i < len(baris):
         tabel(blok[0], blok[2:], persen, judul)
         info_tabel = None
         baru_ganti_halaman = False
+        continue
+    mg = re.match(r"^!\[(.*)\]\((.*)\)$", s)
+    if mg:
+        tutup_paragraf()
+        gambar(*mg.groups())
+        baru_ganti_halaman = False
+        i += 1
         continue
     mb = re.match(r"^- (.*)", s)
     mn = re.match(r"^(\d+)\. (.*)", s)
