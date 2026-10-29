@@ -33,6 +33,7 @@ HASIL = DIR.parent / "hasil"
 ATAS, BAWAH, UTUH = BUKTI / "01_gantt_atas.png", BUKTI / "02_gantt_bawah.png", BUKTI / "03_gantt_utuh.png"
 PDF = HASIL / "Tugas2_Bukti_ClickUp.pdf"
 CSV = HASIL / "Tugas2_ClickUp_Import.csv"
+TAUTAN = "https://sharing.clickup.com/1100310000031077/g/h/z8q7hb3nb5-598/2964fba6379999e"
 GESER = 666     # baris y di gambar bawah = baris y + GESER di gambar atas
 SAMBUNG = 891   # baris potong di gambar atas (batas antara baris 1.5.5 dan 1.5.6)
 LEBAR_GAMBAR = Cm(50)   # lebar Gantt utuh di PDF; batas ukuran halaman Word ±55 cm
@@ -97,6 +98,7 @@ def buat_pdf(ukuran_gambar):
     baris = [
         ("Alat", "ClickUp, paket Free; tampilan Gantt dengan fitur jalur kritis (Critical Path) dinyalakan"),
         ("Lokasi data", f"Space \"Tugas 2 ITPM\" → List \"{NAMA_LIST}\" (level 1 WBS)"),
+        ("Tautan publik", f"{TAUTAN} (dapat dibuka tanpa login)"),
         ("Isi", f"{len(fase)} fase sebagai tugas (level 2), {len(tugas)} work package sebagai subtugas (level 3), "
                 f"{len(milestone)} milestone, dan {n_ketergantungan} ketergantungan Finish-to-Start"),
         ("Jadwal", f"{tanggal(mulai)} sampai {tanggal(selesai)}; hari kerja Senin–Jumat (hari libur nasional tidak dihitung)"),
