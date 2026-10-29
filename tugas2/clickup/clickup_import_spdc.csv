@@ -1,0 +1,230 @@
+Task ID,Task Name,Description,Start Date,Due Date,Tags,Subtask IDs
+WBS-1.1,1.1 Manajemen Proyek,Fase 1.1 (4 work package).,2027-01-04,2027-05-11,fase,"WBS-1.1.1,WBS-1.1.2,WBS-1.1.3,WBS-1.1.4"
+WBS-1.1.1,1.1.1 Project charter dan rencana proyek,"Menyusun piagam proyek, WBS, jadwal, anggaran, Risk Register, dan rencana komunikasi
+
+Hasil: Project charter; rencana manajemen proyek
+Penanggung jawab: MP
+Durasi: 5 hari kerja. Pendahulu: -. Float: 0 hari.",2027-01-04,2027-01-08,"mp,jalur-kritis",
+WBS-1.1.2,1.1.2 Rapat dan laporan kemajuan,"Rapat mingguan tim dan laporan kemajuan ke sponsor
+
+Hasil: Notulen; laporan mingguan
+Penanggung jawab: MP
+Berjalan sepanjang proyek.",2027-01-11,2027-05-06,mp,
+WBS-1.1.3,1.1.3 Pengendalian perubahan dan pemantauan risiko,"Menilai setiap permintaan perubahan; memperbarui Risk Register
+
+Hasil: Change log; Risk Register terbaru
+Penanggung jawab: MP
+Berjalan sepanjang proyek.",2027-01-11,2027-05-06,mp,
+WBS-1.1.4,1.1.4 Penutupan proyek dan lessons learned,"Evaluasi akhir dan pencatatan pelajaran
+
+Hasil: Laporan penutupan; dokumen lessons learned
+Penanggung jawab: MP
+Durasi: 3 hari kerja. Pendahulu: M5. Float: 0 hari.",2027-05-07,2027-05-11,"mp,jalur-kritis",
+WBS-1.2,1.2 Analisis Kebutuhan,Fase 1.2 (5 work package).,2027-01-11,2027-02-01,fase,"WBS-1.2.1,WBS-1.2.2,WBS-1.2.3,WBS-1.2.4,WBS-1.2.5"
+WBS-1.2.1,1.2.1 Kebutuhan pemangku kepentingan,"Wawancara BPBD/pemda dan perwakilan warga: wilayah prioritas, jam operasi, bentuk pesan
+
+Hasil: Catatan kebutuhan
+Penanggung jawab: AS
+Durasi: 5 hari kerja. Pendahulu: M1. Float: 0 hari.",2027-01-11,2027-01-15,"as,jalur-kritis",
+WBS-1.2.2,1.2.2 Studi halaman peringatan dini BMKG,"Mengamati halaman per provinsi: cara penulisan wilayah, frekuensi pembaruan, tampilan saat tidak ada peringatan, tampilan peringatan yang belum mulai berlaku
+
+Hasil: Laporan studi halaman; daftar tautan provinsi
+Penanggung jawab: AS
+Durasi: 3 hari kerja. Pendahulu: M1. Float: 5 hari.",2027-01-11,2027-01-13,as,
+WBS-1.2.3,1.2.3 Daftar wilayah sasaran dan variasi nama,"Mendata wilayah sasaran, ejaan yang mungkin muncul, dan nama mirip yang harus ditolak
+
+Hasil: Daftar wilayah; daftar nama mirip
+Penanggung jawab: AS
+Durasi: 3 hari kerja. Pendahulu: 1.2.1, 1.2.2. Float: 3 hari.",2027-01-18,2027-01-20,as,
+WBS-1.2.4,1.2.4 Survei lokasi pemasangan,"Mengecek listrik, sinyal, ketinggian pasang, keamanan, dan jarak pandang
+
+Hasil: Laporan survei per lokasi
+Penanggung jawab: TL
+Durasi: 6 hari kerja. Pendahulu: 1.2.1. Float: 0 hari.",2027-01-18,2027-01-25,"tl,jalur-kritis",
+WBS-1.2.5,1.2.5 Spesifikasi kebutuhan sistem (SRS),"Merumuskan kebutuhan fungsional dan nonfungsional, termasuk kriteria penerimaan
+
+Hasil: Dokumen SRS
+Penanggung jawab: AS
+Durasi: 5 hari kerja. Pendahulu: 1.2.3, 1.2.4. Float: 0 hari.",2027-01-26,2027-02-01,"as,jalur-kritis",
+WBS-1.3,1.3 Desain Sistem,Fase 1.3 (6 work package).,2027-02-02,2027-02-11,fase,"WBS-1.3.1,WBS-1.3.2,WBS-1.3.3,WBS-1.3.4,WBS-1.3.5,WBS-1.3.6"
+WBS-1.3.1,1.3.1 Arsitektur sistem,"Rancangan hubungan server, MQTT broker, database, dasbor, dan perangkat
+
+Hasil: Diagram arsitektur
+Penanggung jawab: AS
+Durasi: 3 hari kerja. Pendahulu: M2. Float: 0 hari.",2027-02-02,2027-02-04,"as,jalur-kritis",
+WBS-1.3.2,1.3.2 Desain logika status peringatan,"Aturan AKTIF / SELESAI / GAGAL MUAT, aturan 3 pengecekan, interval pengecekan
+
+Hasil: Diagram status dan aturannya
+Penanggung jawab: AS
+Durasi: 2 hari kerja. Pendahulu: 1.3.1. Float: 13 hari.",2027-02-05,2027-02-08,as,
+WBS-1.3.3,1.3.3 Desain database wilayah dan perangkat,"Struktur data wilayah, variasi nama, perangkat, riwayat status
+
+Hasil: Skema database
+Penanggung jawab: PS
+Durasi: 2 hari kerja. Pendahulu: 1.3.1. Float: 10 hari.",2027-02-05,2027-02-08,ps,
+WBS-1.3.4,1.3.4 Desain rangkaian perangkat keras,"Skema board IoT, relay, panel LED, audio, catu daya, dan baterai cadangan
+
+Hasil: Skema rangkaian
+Penanggung jawab: EI
+Durasi: 5 hari kerja. Pendahulu: 1.3.1. Float: 0 hari.",2027-02-05,2027-02-11,"ei,jalur-kritis",
+WBS-1.3.5,1.3.5 Desain pesan LED dan pola audio-lampu,"Teks pesan, pola kedip lampu, pola bunyi sirene, dan jam senyap bila disepakati
+
+Hasil: Spesifikasi pesan dan pola
+Penanggung jawab: AS
+Durasi: 2 hari kerja. Pendahulu: M2. Float: 16 hari.",2027-02-02,2027-02-03,as,
+WBS-1.3.6,1.3.6 Desain dasbor admin,"Rancangan tampilan: status wilayah, status perangkat, mode uji, aktivasi peringatan manual, riwayat
+
+Hasil: Mockup dasbor
+Penanggung jawab: PS
+Durasi: 3 hari kerja. Pendahulu: 1.3.3. Float: 10 hari.",2027-02-09,2027-02-11,ps,
+WBS-1.4,1.4 Pengadaan,Fase 1.4 (5 work package).,2027-01-11,2027-03-02,fase,"WBS-1.4.1,WBS-1.4.2,WBS-1.4.3,WBS-1.4.4,WBS-1.4.5"
+WBS-1.4.1,1.4.1 Daftar komponen (BOM),"Board IoT ESP32 (diprogram dengan C++ melalui PlatformIO), panel LED outdoor, lampu rotari, relay, speaker/amplifier, catu daya, baterai/UPS, modem 4G, enclosure tahan air, sensor arus dan tegangan
+
+Hasil: BOM dengan spesifikasi dan perkiraan harga
+Penanggung jawab: EI
+Durasi: 2 hari kerja. Pendahulu: 1.3.4. Float: 0 hari.",2027-02-12,2027-02-15,"ei,jalur-kritis",
+WBS-1.4.2,1.4.2 Pemilihan pemasok dan pembelian komponen,"Membandingkan pemasok, memesan, dan memeriksa barang datang
+
+Hasil: Komponen diterima; bukti pembelian
+Penanggung jawab: MP
+Durasi: 11 hari kerja. Pendahulu: 1.4.1. Float: 0 hari.",2027-02-16,2027-03-02,"mp,jalur-kritis",
+WBS-1.4.3,1.4.3 Sewa server (VPS) dan domain,"Memilih penyedia, menyewa, dan menyiapkan akses
+
+Hasil: Server siap pakai
+Penanggung jawab: PS
+Durasi: 1 hari kerja. Pendahulu: 1.3.1. Float: 17 hari.",2027-02-05,2027-02-05,ps,
+WBS-1.4.4,1.4.4 Izin pemasangan,"Mengurus izin dari pemilik lokasi, kelurahan, atau pemda
+
+Hasil: Surat izin per lokasi
+Penanggung jawab: MP
+Durasi: 17 hari kerja. Pendahulu: 1.2.4. Float: 37 hari.",2027-01-26,2027-02-17,mp,
+WBS-1.4.5,1.4.5 Penyiapan alat pengembangan,"Berlangganan Claude Code; memasang VS Code, PlatformIO, dan Python + Playwright di komputer tim; membuat repositori Git bersama
+
+Hasil: Alat siap pakai; repositori kode
+Penanggung jawab: PS
+Durasi: 2 hari kerja. Pendahulu: M1. Float: 32 hari.",2027-01-11,2027-01-12,ps,
+WBS-1.5,1.5 Pengembangan Perangkat Lunak Server,Fase 1.5 (6 work package).,2027-02-12,2027-03-11,fase,"WBS-1.5.1,WBS-1.5.2,WBS-1.5.3,WBS-1.5.4,WBS-1.5.5,WBS-1.5.6"
+WBS-1.5.1,1.5.1 Modul pemantau BMKG (Playwright),"Membuka halaman provinsi yang relevan secara berkala, mengambil teks halaman, dan memastikan halaman berhasil dimuat
+
+Hasil: Modul Python
+Penanggung jawab: PS
+Durasi: 5 hari kerja. Pendahulu: M3, 1.4.5. Float: 10 hari.",2027-02-12,2027-02-18,ps,
+WBS-1.5.2,1.5.2 Modul pencocokan nama wilayah,"Mencocokkan per kata utuh dengan variasi nama, menolak nama mirip
+
+Hasil: Modul Python
+Penanggung jawab: PS
+Durasi: 4 hari kerja. Pendahulu: 1.5.1. Float: 10 hari.",2027-02-19,2027-02-24,ps,
+WBS-1.5.3,1.5.3 Modul pengelola status peringatan,"Menerapkan aturan AKTIF / SELESAI / GAGAL MUAT dan menyimpan riwayat
+
+Hasil: Modul Python
+Penanggung jawab: PS
+Durasi: 3 hari kerja. Pendahulu: 1.5.2. Float: 10 hari.",2027-02-25,2027-03-01,ps,
+WBS-1.5.4,1.5.4 Layanan pengirim perintah (MQTT),"Memasang MQTT broker; mengirim perintah nyala/mati ke topik wilayah
+
+Hasil: Broker dan modul pengirim
+Penanggung jawab: PS
+Durasi: 3 hari kerja. Pendahulu: M3, 1.4.3. Float: 13 hari.",2027-02-12,2027-02-16,ps,
+WBS-1.5.5,1.5.5 Dasbor admin,"Mengelola wilayah dan perangkat, melihat status, menyalakan mode uji, dan menyalakan peringatan secara manual bila pembacaan BMKG terganggu (rencana darurat risiko R-03)
+
+Hasil: Aplikasi web dasbor
+Penanggung jawab: PS
+Durasi: 8 hari kerja. Pendahulu: 1.5.3, 1.5.4. Float: 10 hari.",2027-03-02,2027-03-11,ps,
+WBS-1.5.6,1.5.6 Pemantauan heartbeat dan notifikasi admin,"Mendeteksi perangkat yang tidak mengirim heartbeat; memberi tahu admin
+
+Hasil: Modul pemantau dan notifikasi
+Penanggung jawab: PS
+Durasi: 3 hari kerja. Pendahulu: 1.5.4. Float: 24 hari.",2027-02-17,2027-02-19,ps,
+WBS-1.6,1.6 Pengembangan Perangkat IoT,Fase 1.6 (5 work package).,2027-03-03,2027-04-09,fase,"WBS-1.6.1,WBS-1.6.2,WBS-1.6.3,WBS-1.6.4,WBS-1.6.5"
+WBS-1.6.1,1.6.1 Perakitan prototipe,"Merakit satu unit uji di meja kerja
+
+Hasil: 1 unit prototipe
+Penanggung jawab: EI
+Durasi: 3 hari kerja. Pendahulu: 1.4.2, M3. Float: 0 hari.",2027-03-03,2027-03-05,"ei,jalur-kritis",
+WBS-1.6.2,1.6.2 Firmware C++,"Koneksi jaringan, berlangganan topik MQTT, kendali panel LED, relay lampu, dan audio
+
+Hasil: Firmware versi 1
+Penanggung jawab: EI
+Durasi: 8 hari kerja. Pendahulu: 1.6.1, 1.5.4. Float: 0 hari.",2027-03-08,2027-03-17,"ei,jalur-kritis",
+WBS-1.6.3,1.6.3 Fitur heartbeat dan sambung ulang otomatis,"Mengirim heartbeat; menyambung ulang otomatis saat jaringan putus
+
+Hasil: Firmware versi akhir
+Penanggung jawab: EI
+Durasi: 3 hari kerja. Pendahulu: 1.6.2. Float: 0 hari.",2027-03-18,2027-03-22,"ei,jalur-kritis",
+WBS-1.6.4,1.6.4 Fitur diagnosa jarak jauh,"Perangkat melaporkan kondisi daya, koneksi, dan keluaran; admin dapat menjalankan uji diri dari dasbor
+
+Hasil: Firmware dengan fitur diagnosa
+Penanggung jawab: EI
+Durasi: 4 hari kerja. Pendahulu: 1.6.3. Float: 0 hari.",2027-03-23,2027-03-26,"ei,jalur-kritis",
+WBS-1.6.5,1.6.5 Perakitan unit produksi,"Merakit 6 unit di dalam enclosure tahan air
+
+Hasil: Unit siap pasang
+Penanggung jawab: EI
+Durasi: 6 hari kerja. Pendahulu: 1.7.3. Float: 0 hari.",2027-04-02,2027-04-09,"ei,jalur-kritis",
+WBS-1.7,1.7 Pengujian,Fase 1.7 (6 work package).,2027-02-25,2027-05-03,fase,"WBS-1.7.1,WBS-1.7.2,WBS-1.7.3,WBS-1.7.4,WBS-1.7.5,WBS-1.7.6"
+WBS-1.7.1,1.7.1 Uji unit perangkat lunak,"Menguji setiap modul server secara terpisah
+
+Hasil: Laporan uji unit
+Penanggung jawab: QA
+Durasi: 3 hari kerja. Pendahulu: 1.5.5, 1.5.6. Float: 10 hari.",2027-03-12,2027-03-16,qa,
+WBS-1.7.2,1.7.2 Uji pencocokan nama wilayah,"Menguji dengan daftar nama mirip (misalnya ""Batu"" vs ""Batubara"") dan nama di luar daftar peringatan
+
+Hasil: Laporan uji; 0 salah cocok
+Penanggung jawab: QA
+Durasi: 2 hari kerja. Pendahulu: 1.5.2. Float: 22 hari.",2027-02-25,2027-02-26,qa,
+WBS-1.7.3,1.7.3 Uji perangkat keras,"Uji tahan air, panas, baterai cadangan ≥ 4 jam, dan keterbacaan LED di siang hari
+
+Hasil: Laporan uji perangkat keras
+Penanggung jawab: QA
+Durasi: 4 hari kerja. Pendahulu: 1.6.4. Float: 0 hari.",2027-03-29,2027-04-01,"qa,jalur-kritis",
+WBS-1.7.4,1.7.4 Uji integrasi ujung ke ujung,"Alur lengkap BMKG → server → perangkat, dengan halaman uji tiruan; memperbaiki bug yang ditemukan dan menguji ulang
+
+Hasil: Laporan uji; waktu ≤ 10 menit
+Penanggung jawab: QA
+Durasi: 7 hari kerja. Pendahulu: 1.8.2, 1.7.3. Float: 0 hari.",2027-04-02,2027-04-12,"qa,jalur-kritis",
+WBS-1.7.5,1.7.5 Uji kegagalan,"Halaman BMKG tidak bisa diakses, internet perangkat putus, listrik padam; memperbaiki bug yang ditemukan dan menguji ulang
+
+Hasil: Laporan uji kegagalan
+Penanggung jawab: QA
+Durasi: 5 hari kerja. Pendahulu: 1.7.4. Float: 0 hari.",2027-04-13,2027-04-19,"qa,jalur-kritis",
+WBS-1.7.6,1.7.6 Uji coba lapangan dan UAT,"Menjalankan sistem di lokasi percontohan; diuji dan disetujui sponsor; termasuk perbaikan kecil yang diminta sponsor
+
+Hasil: Berita acara UAT
+Penanggung jawab: QA
+Durasi: 10 hari kerja. Pendahulu: 1.8.3, 1.7.5. Float: 0 hari.",2027-04-20,2027-05-03,"qa,jalur-kritis",
+WBS-1.8,1.8 Pemasangan dan Peluncuran,Fase 1.8 (6 work package).,2027-03-17,2027-05-06,fase,"WBS-1.8.1,WBS-1.8.2,WBS-1.8.3,WBS-1.8.4,WBS-1.8.5,WBS-1.8.6"
+WBS-1.8.1,1.8.1 Pemasangan perangkat di lokasi,"Memasang unit, menyambung listrik dan jaringan, uji nyala di tempat
+
+Hasil: Unit terpasang dan berfungsi
+Penanggung jawab: TL
+Durasi: 5 hari kerja. Pendahulu: 1.6.5, 1.4.4. Float: 0 hari.",2027-04-12,2027-04-16,"tl,jalur-kritis",
+WBS-1.8.2,1.8.2 Deploy perangkat lunak server dan pengamanan dasar,"Memasang semua modul ke server produksi; mengatur firewall, HTTPS, dan backup berkala
+
+Hasil: Server produksi berjalan dan aman
+Penanggung jawab: PS
+Durasi: 2 hari kerja. Pendahulu: 1.7.1, 1.7.2, 1.4.3. Float: 10 hari.",2027-03-17,2027-03-18,ps,
+WBS-1.8.3,1.8.3 Konfigurasi wilayah dan pendaftaran perangkat,"Mendaftarkan setiap unit ke wilayah dan topiknya di dasbor
+
+Hasil: Data perangkat lengkap
+Penanggung jawab: PS
+Durasi: 1 hari kerja. Pendahulu: 1.8.1, 1.8.2. Float: 0 hari.",2027-04-19,2027-04-19,"ps,jalur-kritis",
+WBS-1.8.4,1.8.4 Sosialisasi ke warga,"Menjelaskan arti pesan, lampu, dan bunyi; tindakan yang harus dilakukan warga
+
+Hasil: Materi sosialisasi; daftar hadir
+Penanggung jawab: MP
+Durasi: 3 hari kerja. Pendahulu: 1.8.1. Float: 8 hari.",2027-04-19,2027-04-21,mp,
+WBS-1.8.5,1.8.5 Pelatihan operator,"Melatih petugas memakai dasbor, membaca tanda gangguan, dan mode uji
+
+Hasil: Daftar hadir; manual operator
+Penanggung jawab: AS
+Durasi: 2 hari kerja. Pendahulu: 1.8.3. Float: 8 hari.",2027-04-20,2027-04-21,as,
+WBS-1.8.6,1.8.6 Serah terima dan dokumentasi,"Menyerahkan sistem, kode, manual, dan SOP kepada sponsor
+
+Hasil: Berita acara serah terima
+Penanggung jawab: MP
+Durasi: 3 hari kerja. Pendahulu: M4, 1.8.4, 1.8.5. Float: 0 hari.",2027-05-04,2027-05-06,"mp,jalur-kritis",
+M1,◆ M1 Proyek disahkan,"Milestone (durasi 0), akhir hari kerja ke-5.",2027-01-08,2027-01-08,"milestone,jalur-kritis",
+M2,◆ M2 Kebutuhan disetujui sponsor,"Milestone (durasi 0), akhir hari kerja ke-21.",2027-02-01,2027-02-01,"milestone,jalur-kritis",
+M3,◆ M3 Desain disetujui,"Milestone (durasi 0), akhir hari kerja ke-29.",2027-02-11,2027-02-11,milestone,
+M4,◆ M4 UAT disetujui sponsor,"Milestone (durasi 0), akhir hari kerja ke-86.",2027-05-03,2027-05-03,"milestone,jalur-kritis",
+M5,◆ M5 Sistem diserahterimakan,"Milestone (durasi 0), akhir hari kerja ke-89.",2027-05-06,2027-05-06,"milestone,jalur-kritis",
+M6,◆ M6 Proyek ditutup,"Milestone (durasi 0), akhir hari kerja ke-92.",2027-05-11,2027-05-11,"milestone,jalur-kritis",
