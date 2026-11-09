@@ -1,7 +1,7 @@
-"""Membuat slide presentasi Tugas 2 (Rencana Proyek SPDC), 10 menit, 3 penyaji.
+"""Membuat slide presentasi Tugas 2 (Rencana Proyek SPDC), 10 menit, 4 penyaji.
 
 11 slide dipresentasikan + 3 slide cadangan (jalur kritis, daftar istilah, daftar pustaka).
-Penyaji: Eka (slide 1–5, pembuka dan WBS), Erlisnawati (6–8, jadwal), Sri Rejeki (9–11, risiko dan penutup).
+Penyaji: Eka (slide 1–3, pembuka), Cucu (4–5, WBS), Erlisnawati (6–8, jadwal), Sri Rejeki (9–11, risiko dan penutup).
 Naskah tiap slide ada di catatan pembicara (speaker notes).
 
 Jalankan dengan venv mata kuliah (berisi python-pptx):
@@ -207,11 +207,11 @@ def slide_baru(judul=None, catatan="", penyaji=None, judul_slide=False):
     return s
 
 
-EKA, ERLIS, SRI = "Eka Putra Kurnia", "Erlisnawati", "Sri Rejeki"
+EKA, ERLIS, SRI, CUCU = "Eka Putra Kurnia", "Erlisnawati", "Sri Rejeki", "Cucu Tri Eka Yuliana"
 
 # =============== 1. Judul ===============
 s = slide_baru(judul_slide=True, catatan=(
-    "[Eka · ±0:15] Assalamualaikum, selamat pagi/siang. Kami kelompok Eka Putra Kurnia, Erlisnawati, dan Sri Rejeki. "
+    "[Eka · ±0:15] Assalamualaikum, selamat pagi/siang. Kami kelompok Eka Putra Kurnia, Erlisnawati, Sri Rejeki, dan Cucu Tri Eka Yuliana. "
     "Kami menyusun rencana proyek Sistem Peringatan Dini Cuaca Publik, disingkat SPDC, yang terdiri atas tiga dokumen "
     "yang saling terhubung: WBS, jadwal, dan Risk Register, mengikuti PMBOK."))
 teks(s, 0.9, 1.3, 10.4, 0.5, "TUGAS KELOMPOK — IT PROJECT MANAGEMENT", size=16, bold=True, color=BIRU)
@@ -232,6 +232,7 @@ teks(s, 9.0, 4.45, 3.9, 2.6, [
     "EKA PUTRA KURNIA — 25.55.2927",
     "ERLISNAWATI — 25.55.2882",
     "SRI REJEKI — 25.55.2906",
+    "CUCU TRI EKA YULIANA — 25.55.2844",
     [("S2 Informatika — Universitas Amikom Yogyakarta", {"color": ABU})],
     [("Dosen: Melwin Syafrizal, S.Kom., M.Eng., Ph.D.", {"color": ABU})],
 ], size=13, color=TINTA, space_after=2)
@@ -282,7 +283,7 @@ s = slide_baru("Kerangka PMBOK: tiga dokumen, satu rencana", penyaji=EKA, catata
     "[Eka · ±0:30] Kami memakai proses perencanaan PMBOK. Dari knowledge area Scope kami membuat WBS; dari Time, jadwal "
     "dengan estimasi PERT dan Critical Path Method; dari Risk, Risk Register dengan matriks kemungkinan kali dampak. Ketiganya "
     "dihubungkan oleh kode WBS yang sama. Pendekatannya prediktif atau Waterfall, karena pembelian, perakitan, dan pemasangan "
-    "perangkat keras harus berurutan. WBS dan jadwal juga kami susun di ClickUp."))
+    "perangkat keras harus berurutan. WBS dan jadwal juga kami susun di ClickUp. Selanjutnya, WBS akan dijelaskan oleh Cucu."))
 kolom = [
     ("Scope", "WBS", ["Create WBS: 3 level", "Aturan 100%", "Kamus WBS + penanggung jawab"]),
     ("Time / Schedule", "Jadwal & Gantt", ["Urutan: hubungan Finish-to-Start", "Durasi: estimasi PERT (3 titik)",
@@ -308,8 +309,8 @@ teks(s, 0.85, 5.35, 11.6, 1.3, [
 ], size=15, space_after=6)
 
 # =============== 4. WBS ===============
-s = slide_baru(f"WBS: 3 level, {len(FASE)} fase, {JUMLAH_WP} work package", penyaji=EKA, catatan=(
-    f"[Eka · ±1:30] Ini WBS proyek. Level 1 adalah proyek SPDC, level 2 adalah {len(FASE)} fase, dan level 3 adalah "
+s = slide_baru(f"WBS: 3 level, {len(FASE)} fase, {JUMLAH_WP} work package", penyaji=CUCU, catatan=(
+    f"[Cucu · ±1:30] Terima kasih. Ini WBS proyek. Level 1 adalah proyek SPDC, level 2 adalah {len(FASE)} fase, dan level 3 adalah "
     f"{JUMLAH_WP} work package, yaitu pekerjaan terkecil yang bisa ditugaskan, diperkirakan durasinya, dan dipantau. WBS "
     "disusun per fase seperti contoh PMBOK edisi 4 Gambar 5-9. Kami memegang aturan 100 persen: semua pekerjaan yang "
     "diperlukan harus masuk, termasuk manajemen proyek, pengadaan dan izin, sampai pelatihan operator. Setiap work package "
@@ -336,8 +337,8 @@ teks(s, 0.6, 6.6, 12.1, 0.35, [[
     size=12, color=ABU, align=PP_ALIGN.CENTER)
 
 # =============== 5. Pekerjaan yang sering terlupa ===============
-s = slide_baru("Pekerjaan yang sering terlupa juga masuk WBS", penyaji=EKA, catatan=(
-    "[Eka · ±0:30] Contoh penerapan aturan 100 persen. Selain membuat server dan perangkat, WBS memuat manajemen proyek, "
+s = slide_baru("Pekerjaan yang sering terlupa juga masuk WBS", penyaji=CUCU, catatan=(
+    "[Cucu · ±0:30] Contoh penerapan aturan 100 persen. Selain membuat server dan perangkat, WBS memuat manajemen proyek, "
     "izin pemasangan, deploy dan pengamanan server, sosialisasi warga, dan pelatihan operator. Perbaikan bug tidak dibuat "
     "work package terpisah; ia masuk ke fase pengujian dengan pola uji, perbaiki, uji ulang. Milestone tidak masuk WBS "
     "karena bukan pekerjaan, melainkan penanda waktu di jadwal. Selanjutnya, jadwal akan dijelaskan oleh Erlisnawati."))

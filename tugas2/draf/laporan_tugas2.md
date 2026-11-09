@@ -2,7 +2,7 @@
 judul: Rencana Proyek Sistem Peringatan Dini Cuaca Publik Berbasis IoT (Audio-Visual) Terintegrasi Data BMKG
 subjudul: Work Breakdown Structure, Jadwal Proyek, dan Risk Register
 jenis: Tugas Kelompok — IT Project Management
-anggota: EKA PUTRA KURNIA|25.55.2927; ERLISNAWATI|25.55.2882; SRI REJEKI|25.55.2906
+anggota: EKA PUTRA KURNIA|25.55.2927; ERLISNAWATI|25.55.2882; SRI REJEKI|25.55.2906; CUCU TRI EKA YULIANA|25.55.2844
 prodi: Program Studi S2 Informatika
 kampus: Universitas Amikom Yogyakarta
 dosen: Dosen Pengampu: Melwin Syafrizal, S.Kom., M.Eng., Ph.D.
