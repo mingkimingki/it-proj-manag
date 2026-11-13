@@ -69,7 +69,7 @@ Dengan begitu, perbedaan di Bab 4 berasal dari **cara berpikir** kedua edisi, bu
 
 **Alat bantu:**
 - Jadwal proyek dimasukkan ke **ClickUp**, lengkap dengan ketergantungan antartugas. Tampilan Gantt-nya dapat dibuka di https://sharing.clickup.com/1100310000031077/g/h/z8q7hb3nb5-618/c5be485d10fbe8c
-- **Pernyataan penggunaan AI.** Penyusunan laporan ini dibantu AI (Claude, Anthropic) untuk menelusuri rujukan dalam materi kuliah, menyusun draf, dan memeriksa konsistensi data antardokumen. Keputusan-keputusan proyek dan sikap dalam analisis komparatif ditetapkan penulis, dan refleksi manajerial (Bab 5) ditulis sendiri oleh penulis.
+- **Pernyataan penggunaan AI.** Penyusunan laporan ini dibantu AI (Claude, Anthropic) untuk menelusuri rujukan dalam materi kuliah, menyusun draf, dan memeriksa konsistensi data antardokumen. Keputusan-keputusan proyek dan sikap dalam analisis komparatif ditetapkan penulis, dan isi refleksi manajerial (Bab 5) berasal dari pendapat penulis sendiri.
 
 ## 1.5 Sistematika laporan
 
