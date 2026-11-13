@@ -176,12 +176,12 @@ Arah perkembangan PMBOK pun mendukung sikap ini. PMBOK edisi ke-8 (2025) memangk
 
 ## Bahan refleksi (dari penulis)
 
-> Dicatat apa adanya dari jawaban penulis, tanpa diubah. Disusun menjadi paragraf refleksi oleh penulis sendiri saat perakitan.
+> Dicatat dari jawaban penulis; hanya ejaan yang dibetulkan (13 Nov 2026), isi tidak diubah. Disusun menjadi paragraf refleksi oleh penulis sendiri saat perakitan.
 
 ### Butir A: prinsip tanpa riba
 
-- Ucapan awal (13 Nov 2026, saat menyusun Business Case): "jangan ada unsur ruba"
-- Jawaban refleksi (13 Nov 2026): "ini aturan agama yang wajib dipatuhi, erlebih banyak umat islam muai sadara bahaya riba"
+- Ucapan awal (13 Nov 2026, saat menyusun Business Case): "jangan ada unsur riba"
+- Jawaban refleksi (13 Nov 2026): "ini aturan agama yang wajib dipatuhi, terlebih banyak umat Islam mulai sadar akan bahaya riba"
 - Pertanyaan lanjutan yang belum dijawab:
   - a. Apakah *wallet* tanpa *paylater* bisa menjadi daya tarik bagi UMKM dan pembeli, bukan sekadar larangan?
   - b. Bila investor atau direktur tetap meminta perhitungan NPV, apa yang dilakukan sebagai PM?
