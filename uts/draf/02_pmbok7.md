@@ -564,7 +564,7 @@ PMBOK 7 membedakan dua jenis cadangan (*Guide* hlm 62, 127):
 
 **Temuan atas rencana Bab 2:**
 1. **Cadangan biaya Rp 1,5 miliar masih satu pos.** Dengan cara pandang PMBOK 7, pos ini sebaiknya dipilah: ± Rp 1,0 miliar sebagai cadangan kontingensi untuk R01–R12, dipakai lewat persetujuan Komite Pengarah, dan ± Rp 0,5 miliar sebagai cadangan manajemen yang dipegang Sponsor. Jumlah anggaran tidak berubah, hanya penggunaannya yang lebih jelas. Seluruhnya tetap berasal dari modal sendiri (P1).
-2. **Jadwal tidak punya cadangan waktu.** Jadwal di Tabel 2.13 hanya punya sedikit waktu longgar di luar jalur kritis. Tidak ada penyangga sebelum M3 dan M5. Ini kelemahan rencana PMBOK 4 yang disusun di sini.
+2. **Jadwal tidak punya cadangan waktu.** Sebanyak 24 dari 42 paket kerja di Tabel 2.13 tidak punya waktu longgar. Satu-satunya kelonggaran ada pada April, antara M3 dan M4. Tidak ada penyangga sebelum M3 dan sebelum M6. Ini kelemahan rencana PMBOK 4 yang disusun di sini.
 3. **Pendekatan *hybrid* memberi jalan keluar tanpa menggeser tanggal**: **lingkup menjadi penyangga**. Waktu (*sprint* dan *milestone*) dibuat tetap, sedangkan fitur pelengkap yang lentur. Bila *sprint* tertinggal, fitur pelengkap digeser lewat Komite. Cara ini menjawab R08 dan R09 tanpa meminta tambahan waktu atau biaya.
 
 #### Ringkasan perbedaan dengan PMBOK 4

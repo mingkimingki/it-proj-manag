@@ -1,0 +1,170 @@
+Task ID,Task Name,Description,Start Date,Due Date,Tags,Subtask IDs
+WBS-1.1,1.1 Manajemen proyek,Level 2 WBS (6 paket kerja).,2027-01-04,2027-06-30,fase,"WBS-1.1.1,WBS-1.1.2,WBS-1.1.3,WBS-1.1.4,WBS-1.1.5,WBS-1.1.6"
+WBS-1.1.1,1.1.1 Dokumen inisiasi,"Hasil kerja: Stakeholder Register, Stakeholder Management Strategy, Business Case, Project Charter
+Penanggung jawab: PM
+Durasi: 1 hari kerja. Pendahulu: — (Stakeholder Register dan Business Case disusun sebelum proyek dimulai)
+Jalur kritis.",2027-01-04,2027-01-04,"pm,jalur-kritis",
+WBS-1.1.2,1.1.2 Kick-off meeting dan Team Contract,"Hasil kerja: Notulen kick-off, Team Contract bertanda tangan
+Penanggung jawab: PM
+Durasi: 3 hari kerja. Pendahulu: 1.1.1 (M0)",2027-01-06,2027-01-08,pm,
+WBS-1.1.3,1.1.3 Rencana proyek,"Hasil kerja: Scope Statement, WBS, jadwal, Risk Register
+Penanggung jawab: PM
+Durasi: 17 hari kerja. Pendahulu: M1
+Jalur kritis.",2027-01-07,2027-01-29,"pm,jalur-kritis",
+WBS-1.1.4,1.1.4 Komunikasi dan laporan kemajuan,"Hasil kerja: Notulen rapat harian, mingguan, dan Komite Pengarah; laporan kemajuan bulanan; kabar berkala untuk stakeholder sesuai Tabel 2.2
+Penanggung jawab: PM
+Durasi: 120 hari kerja. Pendahulu: — (berjalan sepanjang proyek)",2027-01-04,2027-06-30,pm,
+WBS-1.1.5,1.1.5 Pengendalian perubahan dan risiko,"Hasil kerja: Catatan permintaan perubahan beserta keputusannya; Risk Register yang diperbarui
+Penanggung jawab: PM
+Durasi: 120 hari kerja. Pendahulu: — (berjalan sepanjang proyek)",2027-01-04,2027-06-30,pm,
+WBS-1.1.6,1.1.6 Laporan evaluasi Rilis 1,"Hasil kerja: Data adopsi, kinerja sistem, dan masukan pengguna sebagai dasar keputusan M4
+Penanggung jawab: PM, BD
+Durasi: 21 hari kerja. Pendahulu: 1.3.13 (M3)",2027-04-01,2027-04-29,"pm,bd",
+WBS-1.2,1.2 Persiapan dan desain,Level 2 WBS (6 paket kerja).,2027-01-07,2027-01-29,fase,"WBS-1.2.1,WBS-1.2.2,WBS-1.2.3,WBS-1.2.4,WBS-1.2.5,WBS-1.2.6"
+WBS-1.2.1,1.2.1 Kebutuhan pengguna,"Hasil kerja: Daftar kebutuhan UMKM, pembeli, dan kurir, disusun bersama perwakilan Paguyuban UMKM
+Penanggung jawab: BD, UX
+Durasi: 12 hari kerja. Pendahulu: M1
+Jalur kritis.",2027-01-07,2027-01-22,"bd,ux,jalur-kritis",
+WBS-1.2.2,1.2.2 Arsitektur sistem dan rancangan data,"Hasil kerja: Dokumen arsitektur, rancangan basis data, rancangan integrasi dengan mitra
+Penanggung jawab: SE
+Durasi: 15 hari kerja. Pendahulu: 1.2.1 (mulai 2 hari kemudian)
+Jalur kritis.",2027-01-11,2027-01-29,"se,jalur-kritis",
+WBS-1.2.3,1.2.3 Desain antarmuka dan prototipe,"Hasil kerja: Rancangan tampilan Android dan dasbor web; prototipe yang diuji ke perwakilan UMKM
+Penanggung jawab: UX
+Durasi: 15 hari kerja. Pendahulu: 1.2.1 (mulai 2 hari kemudian)
+Jalur kritis.",2027-01-11,2027-01-29,"ux,jalur-kritis",
+WBS-1.2.4,1.2.4 Kontrak mitra,"Hasil kerja: Kontrak dengan mitra kurir, mitra pembayaran, penyedia cloud, dan konsultan keamanan, sesuai prinsip P1–P4
+Penanggung jawab: BD, LC
+Durasi: 17 hari kerja. Pendahulu: M1
+Jalur kritis.",2027-01-07,2027-01-29,"bd,lc,jalur-kritis",
+WBS-1.2.5,1.2.5 Peta izin dan kepatuhan,"Hasil kerja: Daftar izin dan pendaftaran beserta jadwalnya; daftar periksa perlindungan data pribadi dan prinsip P1–P4
+Penanggung jawab: LC
+Durasi: 7 hari kerja. Pendahulu: M1",2027-01-07,2027-01-15,lc,
+WBS-1.2.6,1.2.6 Lingkungan pengembangan,"Hasil kerja: Server pengembangan dan pengujian di cloud, alat kerja tim
+Penanggung jawab: IC
+Durasi: 10 hari kerja. Pendahulu: 1.2.4 (kontrak cloud lebih dulu, paling lambat 15 Jan)
+Jalur kritis.",2027-01-18,2027-01-29,"ic,jalur-kritis",
+WBS-1.3,1.3 Rilis 1 (Kota Yogyakarta; Android + dasbor web),Level 2 WBS (13 paket kerja).,2027-01-18,2027-03-31,fase,"WBS-1.3.1,WBS-1.3.2,WBS-1.3.3,WBS-1.3.4,WBS-1.3.5,WBS-1.3.6,WBS-1.3.7,WBS-1.3.8,WBS-1.3.9,WBS-1.3.10,WBS-1.3.11,WBS-1.3.12,WBS-1.3.13"
+WBS-1.3.1,1.3.1 Modul marketplace,"Hasil kerja: Pendaftaran dan verifikasi UMKM, katalog produk, pencarian, keranjang, pemesanan, ulasan
+Penanggung jawab: SE
+Durasi: 25 hari kerja. Pendahulu: 1.2.2, 1.2.3 (M2)
+Jalur kritis.",2027-02-01,2027-03-05,"se,jalur-kritis",
+WBS-1.3.2,1.3.2 Modul pengiriman dan tracking,"Hasil kerja: Integrasi dengan mitra kurir, pelacakan real-time, notifikasi status pesanan
+Penanggung jawab: SE
+Durasi: 25 hari kerja. Pendahulu: 1.2.2, 1.2.4 (M2)
+Jalur kritis.",2027-02-01,2027-03-05,"se,jalur-kritis",
+WBS-1.3.3,1.3.3 Modul digital wallet,"Hasil kerja: Isi saldo, pembayaran, pencairan dana penjual, riwayat transaksi; terhubung ke mitra pembayaran; tanpa paylater dan cicilan
+Penanggung jawab: SE
+Durasi: 25 hari kerja. Pendahulu: 1.2.2, 1.2.4 (M2)
+Jalur kritis.",2027-02-01,2027-03-05,"se,jalur-kritis",
+WBS-1.3.4,1.3.4 Dasbor web UMKM dan panel admin,"Hasil kerja: Dasbor penjualan untuk UMKM; panel admin untuk verifikasi dan pengaduan
+Penanggung jawab: SE, UX
+Durasi: 20 hari kerja. Pendahulu: 1.2.3
+Jalur kritis.",2027-02-08,2027-03-05,"se,ux,jalur-kritis",
+WBS-1.3.5,1.3.5 Fitur keamanan aplikasi,"Hasil kerja: Enkripsi data, verifikasi dua langkah, pencatatan akses
+Penanggung jawab: IC
+Durasi: 20 hari kerja. Pendahulu: 1.2.2
+Jalur kritis.",2027-02-08,2027-03-05,"ic,jalur-kritis",
+WBS-1.3.6,1.3.6 Infrastruktur produksi,"Hasil kerja: Server produksi di cloud, pemantauan sistem, cadangan data
+Penanggung jawab: IC
+Durasi: 25 hari kerja. Pendahulu: 1.2.6
+Jalur kritis.",2027-02-01,2027-03-05,"ic,jalur-kritis",
+WBS-1.3.7,1.3.7 Pengujian fungsi dan integrasi,"Hasil kerja: Laporan uji fungsi, uji integrasi mitra, dan uji beban (K1–K3)
+Penanggung jawab: SE
+Durasi: 5 hari kerja. Pendahulu: 1.3.1–1.3.6
+Jalur kritis.",2027-03-15,2027-03-19,"se,jalur-kritis",
+WBS-1.3.8,1.3.8 Uji keamanan pertama,"Hasil kerja: Laporan uji keamanan dari konsultan dan bukti perbaikannya (K4)
+Penanggung jawab: IC
+Durasi: 8 hari kerja. Pendahulu: 1.3.5, 1.3.6",2027-03-15,2027-03-24,ic,
+WBS-1.3.9,1.3.9 UAT Rilis 1,"Hasil kerja: Laporan UAT bersama perwakilan Paguyuban UMKM (K5)
+Penanggung jawab: BD
+Durasi: 4 hari kerja. Pendahulu: 1.3.7
+Jalur kritis.",2027-03-22,2027-03-25,"bd,jalur-kritis",
+WBS-1.3.10,1.3.10 Pemenuhan izin dan pendaftaran sistem elektronik,"Hasil kerja: Bukti pendaftaran dan izin yang dibutuhkan Rilis 1 (K6)
+Penanggung jawab: LC
+Durasi: 40 hari kerja. Pendahulu: 1.2.5",2027-01-18,2027-03-19,lc,
+WBS-1.3.11,1.3.11 Pelatihan dan pendaftaran UMKM Kota Yogyakarta,"Hasil kerja: Materi pelatihan, daftar hadir, UMKM terdaftar dengan katalog terisi
+Penanggung jawab: BD, OL
+Durasi: 11 hari kerja. Pendahulu: 1.3.4",2027-03-15,2027-03-30,"bd,ol",
+WBS-1.3.12,1.3.12 Kesiapan operasional,"Hasil kerja: Prosedur layanan pelanggan, penanganan pengaduan, dan koordinasi kurir
+Penanggung jawab: OL
+Durasi: 14 hari kerja. Pendahulu: 1.2.1
+Jalur kritis.",2027-03-01,2027-03-25,"ol,jalur-kritis",
+WBS-1.3.13,1.3.13 Peluncuran Rilis 1,"Hasil kerja: Aplikasi tersedia di toko aplikasi; sosialisasi di Kota Yogyakarta
+Penanggung jawab: BD
+Durasi: 3 hari kerja. Pendahulu: 1.3.8–1.3.10, 1.3.12; disetujui Komite (K7)
+Jalur kritis.",2027-03-29,2027-03-31,"bd,jalur-kritis",
+WBS-1.4,1.4 Rilis 2 (seluruh DIY; + iOS dan rekomendasi AI),Level 2 WBS (12 paket kerja).,2027-04-05,2027-06-15,fase,"WBS-1.4.1,WBS-1.4.2,WBS-1.4.3,WBS-1.4.4,WBS-1.4.5,WBS-1.4.6,WBS-1.4.7,WBS-1.4.8,WBS-1.4.9,WBS-1.4.10,WBS-1.4.11,WBS-1.4.12"
+WBS-1.4.1,1.4.1 Desain Rilis 2,"Hasil kerja: Rancangan fitur Rilis 2 dan daftar perbaikan dari evaluasi Rilis 1
+Penanggung jawab: UX, SE
+Durasi: 15 hari kerja. Pendahulu: 1.3.13 (M3)",2027-04-05,2027-04-23,"ux,se",
+WBS-1.4.2,1.4.2 Modul rekomendasi AI,"Hasil kerja: Rekomendasi produk untuk pembeli; saran produk dan stok untuk UMKM
+Penanggung jawab: SE
+Durasi: 19 hari kerja. Pendahulu: 1.4.1; keputusan lanjut (M4)",2027-05-03,2027-05-28,se,
+WBS-1.4.3,1.4.3 Aplikasi iOS,"Hasil kerja: Aplikasi iOS dengan fitur setara Android
+Penanggung jawab: SE
+Durasi: 19 hari kerja. Pendahulu: 1.4.1; keputusan lanjut (M4)",2027-05-03,2027-05-28,se,
+WBS-1.4.4,1.4.4 Fitur promosi berbayar UMKM,"Hasil kerja: Promosi produk dengan tarif tetap yang diumumkan terbuka, tanpa denda (P4)
+Penanggung jawab: SE, BD
+Durasi: 14 hari kerja. Pendahulu: 1.4.1; M4",2027-05-03,2027-05-21,"se,bd",
+WBS-1.4.5,1.4.5 Laporan kinerja untuk manajemen,"Hasil kerja: Dasbor kinerja penjualan dan adopsi untuk manajemen PT ND
+Penanggung jawab: SE
+Durasi: 15 hari kerja. Pendahulu: 1.4.1; M4",2027-05-10,2027-05-28,se,
+WBS-1.4.6,1.4.6 Perluasan layanan ke seluruh DIY,"Hasil kerja: Area layanan kurir di Sleman, Bantul, Kulon Progo, dan Gunungkidul
+Penanggung jawab: OL, BD
+Durasi: 23 hari kerja. Pendahulu: M4
+Jalur kritis.",2027-05-03,2027-06-04,"ol,bd,jalur-kritis",
+WBS-1.4.7,1.4.7 Penambahan kapasitas infrastruktur,"Hasil kerja: Kapasitas server untuk pengguna seluruh DIY
+Penanggung jawab: IC
+Durasi: 10 hari kerja. Pendahulu: M4",2027-05-17,2027-05-28,ic,
+WBS-1.4.8,1.4.8 Pengujian fungsi dan integrasi,"Hasil kerja: Laporan uji fungsi, uji integrasi, dan uji beban Rilis 2 (K1–K3)
+Penanggung jawab: SE
+Durasi: 6 hari kerja. Pendahulu: 1.4.2–1.4.5, 1.4.7",2027-05-31,2027-06-08,se,
+WBS-1.4.9,1.4.9 Uji keamanan kedua,"Hasil kerja: Laporan uji keamanan dari konsultan dan bukti perbaikannya (K4)
+Penanggung jawab: IC
+Durasi: 7 hari kerja. Pendahulu: 1.4.2–1.4.5, 1.4.7",2027-05-31,2027-06-09,ic,
+WBS-1.4.10,1.4.10 UAT Rilis 2,"Hasil kerja: Laporan UAT bersama perwakilan UMKM dari kabupaten baru (K5)
+Penanggung jawab: BD
+Durasi: 4 hari kerja. Pendahulu: 1.4.8 (mulai sebelum 1.4.8 selesai)",2027-06-07,2027-06-10,bd,
+WBS-1.4.11,1.4.11 Pelatihan UMKM empat kabupaten,"Hasil kerja: Materi pelatihan, daftar hadir, UMKM terdaftar
+Penanggung jawab: BD, OL
+Durasi: 19 hari kerja. Pendahulu: 1.4.6 (mulai 2 minggu setelah 1.4.6 dimulai); memakai aplikasi Rilis 1
+Jalur kritis.",2027-05-17,2027-06-11,"bd,ol,jalur-kritis",
+WBS-1.4.12,1.4.12 Peluncuran Rilis 2,"Hasil kerja: Rilis 2 tersedia di toko aplikasi Android dan iOS; sosialisasi di seluruh DIY
+Penanggung jawab: BD
+Durasi: 2 hari kerja. Pendahulu: 1.4.6, 1.4.9–1.4.11; disetujui Komite (K7)
+Jalur kritis.",2027-06-14,2027-06-15,"bd,jalur-kritis",
+WBS-1.5,1.5 Serah terima dan penutupan,Level 2 WBS (5 paket kerja).,2027-05-17,2027-06-30,fase,"WBS-1.5.1,WBS-1.5.2,WBS-1.5.3,WBS-1.5.4,WBS-1.5.5"
+WBS-1.5.1,1.5.1 Dokumentasi teknis dan panduan operasional,"Hasil kerja: Dokumentasi sistem, panduan admin, panduan penanganan gangguan
+Penanggung jawab: SE, IC
+Durasi: 29 hari kerja. Pendahulu: 1.3.13
+Jalur kritis.",2027-05-17,2027-06-25,"se,ic,jalur-kritis",
+WBS-1.5.2,1.5.2 Alih pengetahuan ke tim operasional,"Hasil kerja: Pelatihan tim Operations & Logistics untuk menjalankan sistem
+Penanggung jawab: SE, OL
+Durasi: 8 hari kerja. Pendahulu: 1.4.12 (M5)
+Jalur kritis.",2027-06-16,2027-06-25,"se,ol,jalur-kritis",
+WBS-1.5.3,1.5.3 Berita acara serah terima,"Hasil kerja: Berita acara bertanda tangan PM dan Kepala Operations & Logistics
+Penanggung jawab: PM, OL
+Durasi: 3 hari kerja. Pendahulu: 1.5.1, 1.5.2
+Jalur kritis.",2027-06-28,2027-06-30,"pm,ol,jalur-kritis",
+WBS-1.5.4,1.5.4 Penutupan kontrak proyek,"Hasil kerja: Penyelesaian kontrak yang khusus untuk proyek (misalnya konsultan keamanan)
+Penanggung jawab: LC, BD
+Durasi: 7 hari kerja. Pendahulu: 1.4.12 (M5)",2027-06-21,2027-06-29,"lc,bd",
+WBS-1.5.5,1.5.5 Laporan akhir dan lessons learned,"Hasil kerja: Laporan akhir proyek dan catatan pelajaran untuk proyek berikutnya
+Penanggung jawab: PM
+Durasi: 8 hari kerja. Pendahulu: 1.4.12 (M5)
+Jalur kritis.",2027-06-21,2027-06-30,"pm,jalur-kritis",
+M0,◆ M0 Project Charter disahkan,"Milestone, Sen, 4 Jan 2027.
+Syarat tercapai: 1.1.1 selesai",2027-01-04,2027-01-04,milestone,
+M1,◆ M1 Kick-off meeting,"Milestone, Rab, 6 Jan 2027.
+Syarat tercapai: Rapat terlaksana (1.1.2)",2027-01-06,2027-01-06,milestone,
+M2,◆ M2 Lingkup dan desain disetujui,"Milestone, Jum, 29 Jan 2027.
+Syarat tercapai: 1.1.3 dan 1.2.1–1.2.6 selesai; disetujui Komite Pengarah",2027-01-29,2027-01-29,milestone,
+M3,◆ M3 Rilis 1 di Kota Yogyakarta,"Milestone, Rab, 31 Mar 2027.
+Syarat tercapai: Kriteria penerimaan K1–K7 terpenuhi; 1.3.13 selesai",2027-03-31,2027-03-31,milestone,
+M4,◆ M4 Evaluasi Rilis 1 dan keputusan lanjut,"Milestone, Jum, 30 Apr 2027.
+Syarat tercapai: 1.1.6 selesai; keputusan Komite Pengarah",2027-04-30,2027-04-30,milestone,
+M5,◆ M5 Rilis 2,"Milestone, Sel, 15 Jun 2027.
+Syarat tercapai: Kriteria penerimaan K1–K7 terpenuhi; 1.4.12 selesai",2027-06-15,2027-06-15,milestone,
+M6,◆ M6 Penutupan proyek dan serah terima,"Milestone, Rab, 30 Jun 2027.
+Syarat tercapai: 1.5.3 dan 1.5.5 selesai",2027-06-30,2027-06-30,milestone,

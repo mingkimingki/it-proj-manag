@@ -6,3 +6,6 @@ __pycache__/
 # Berkas kunci sementara Word / LibreOffice
 ~$*
 .~lock*
+
+# Tangkapan layar mentah ClickUp (memuat nama workspace); versi bersih dibuat skrip
+uts/bukti/

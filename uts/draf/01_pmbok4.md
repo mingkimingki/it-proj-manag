@@ -668,7 +668,7 @@ Jadwal proyek menetapkan **kapan** setiap paket kerja dikerjakan. Penyusunannya 
 - **Satuan durasi: hari kerja** (Senin–Jumat). Hari yang tidak dihitung: cuti bersama Idulfitri 8–12 Maret 2027 [CEK], Wafat Isa Almasih (Jumat Agung) 26 Maret, Kenaikan Isa Almasih 6 Mei, dan Hari Lahir Pancasila 1 Juni 2027. Hari libur nasional lain menyesuaikan SKB (Surat Keputusan Bersama) Menteri tentang libur nasional dan cuti bersama 2027 setelah terbit [CEK].
 - **Teknik estimasi:** *expert judgment* (penilaian kepala divisi berdasarkan pengalaman) dan *analogous estimation* (berdasarkan proyek serupa), dua teknik di slide 06 hlm 21.
 - **Pendahulu** (*predecessor*) adalah pekerjaan yang harus selesai sebelum pekerjaan lain bisa dimulai. Semua hubungan memakai pola *finish-to-start* (selesai lalu mulai), kecuali disebut lain.
-- **Jalur kritis** (*critical path*) adalah rangkaian pekerjaan terpanjang yang saling bergantung. Pekerjaan di jalur ini tidak punya *float* (waktu longgar), sehingga keterlambatan sehari pun menggeser *milestone* (slide 06 hlm 20; PMBOK 4 hlm 138). Di tabel, pekerjaan ini diberi tanda ●.
+- **Jalur kritis** (*critical path*) adalah rangkaian pekerjaan terpanjang yang saling bergantung. Pekerjaan di jalur ini tidak punya *float* (waktu longgar), sehingga keterlambatan sehari pun menggeser *milestone* (slide 06 hlm 20; PMBOK 4 hlm 138). Di tabel, pekerjaan ini diberi tanda ●. *Float* dihitung dalam hari kerja, dengan tanggal *milestone* sebagai batas waktu tetap. Paket 1.1.4 dan 1.1.5 berjalan sepanjang proyek, sehingga tidak ditandai.
 - **Gerbang M4.** Hanya 1.1.6 dan 1.4.1 yang berjalan pada April. Pembangunan Rilis 2 (1.4.2 dst.) baru mulai Senin 3 Mei 2027, setelah Komite Pengarah memutuskan lanjut pada 30 April.
 
 **Tabel 2.12 Daftar milestone**
@@ -705,64 +705,71 @@ Milestone                   ◆     ◆                 ◆       ◆           
 | Kode | Paket kerja | Mulai | Selesai | Hari kerja | Pendahulu | Kritis |
 |---|---|---|---|---|---|---|
 | **1.1** | **Manajemen proyek** | **4 Jan** | **30 Jun** | | | |
-| 1.1.1 | Dokumen inisiasi | — | 4 Jan | 1 | — (Stakeholder Register dan Business Case disusun sebelum proyek dimulai) | |
+| 1.1.1 | Dokumen inisiasi | — | 4 Jan | 1 | — (Stakeholder Register dan Business Case disusun sebelum proyek dimulai) | ● |
 | 1.1.2 | Kick-off meeting dan Team Contract | 6 Jan | 8 Jan | 3 | 1.1.1 (M0) | |
-| 1.1.3 | Rencana proyek | 7 Jan | 29 Jan | 17 | 1.1.2 (mulai sehari setelah kick-off) | |
+| 1.1.3 | Rencana proyek | 7 Jan | 29 Jan | 17 | M1 | ● |
 | 1.1.4 | Komunikasi dan laporan kemajuan | 4 Jan | 30 Jun | 120 | — (berjalan sepanjang proyek) | |
 | 1.1.5 | Pengendalian perubahan dan risiko | 4 Jan | 30 Jun | 120 | — (berjalan sepanjang proyek) | |
-| 1.1.6 | Laporan evaluasi Rilis 1 | 1 Apr | 29 Apr | 21 | 1.3.13 (M3) | ● |
+| 1.1.6 | Laporan evaluasi Rilis 1 | 1 Apr | 29 Apr | 21 | 1.3.13 (M3) | |
 | **1.2** | **Persiapan dan desain** | **7 Jan** | **29 Jan** | | | |
-| 1.2.1 | Kebutuhan pengguna | 7 Jan | 22 Jan | 12 | 1.1.2 (M1) | |
-| 1.2.2 | Arsitektur sistem dan rancangan data | 11 Jan | 29 Jan | 15 | 1.2.1 (mulai 2 hari kemudian) | |
-| 1.2.3 | Desain antarmuka dan prototipe | 11 Jan | 29 Jan | 15 | 1.2.1 (mulai 2 hari kemudian) | |
-| 1.2.4 | Kontrak mitra | 7 Jan | 29 Jan | 17 | 1.1.2 (M1) | ● |
-| 1.2.5 | Peta izin dan kepatuhan | 7 Jan | 15 Jan | 7 | 1.1.2 (M1) | |
-| 1.2.6 | Lingkungan pengembangan | 18 Jan | 29 Jan | 10 | 1.2.4 (kontrak *cloud* lebih dulu, paling lambat 15 Jan) | |
+| 1.2.1 | Kebutuhan pengguna | 7 Jan | 22 Jan | 12 | M1 | ● |
+| 1.2.2 | Arsitektur sistem dan rancangan data | 11 Jan | 29 Jan | 15 | 1.2.1 (mulai 2 hari kemudian) | ● |
+| 1.2.3 | Desain antarmuka dan prototipe | 11 Jan | 29 Jan | 15 | 1.2.1 (mulai 2 hari kemudian) | ● |
+| 1.2.4 | Kontrak mitra | 7 Jan | 29 Jan | 17 | M1 | ● |
+| 1.2.5 | Peta izin dan kepatuhan | 7 Jan | 15 Jan | 7 | M1 | |
+| 1.2.6 | Lingkungan pengembangan | 18 Jan | 29 Jan | 10 | 1.2.4 (kontrak *cloud* lebih dulu, paling lambat 15 Jan) | ● |
 | **1.3** | **Rilis 1** | **18 Jan** | **31 Mar** | | | |
-| 1.3.1 | Modul *marketplace* | 1 Feb | 5 Mar | 25 | 1.2.2, 1.2.3 (M2) | |
-| 1.3.2 | Modul pengiriman dan *tracking* | 1 Feb | 5 Mar | 25 | 1.2.2, 1.2.4 (M2) | |
+| 1.3.1 | Modul *marketplace* | 1 Feb | 5 Mar | 25 | 1.2.2, 1.2.3 (M2) | ● |
+| 1.3.2 | Modul pengiriman dan *tracking* | 1 Feb | 5 Mar | 25 | 1.2.2, 1.2.4 (M2) | ● |
 | 1.3.3 | Modul *digital wallet* | 1 Feb | 5 Mar | 25 | 1.2.2, 1.2.4 (M2) | ● |
-| 1.3.4 | Dasbor web UMKM dan panel admin | 8 Feb | 5 Mar | 20 | 1.2.3 | |
-| 1.3.5 | Fitur keamanan aplikasi | 8 Feb | 5 Mar | 20 | 1.2.2 | |
-| 1.3.6 | Infrastruktur produksi | 1 Feb | 5 Mar | 25 | 1.2.6 | |
+| 1.3.4 | Dasbor web UMKM dan panel admin | 8 Feb | 5 Mar | 20 | 1.2.3 | ● |
+| 1.3.5 | Fitur keamanan aplikasi | 8 Feb | 5 Mar | 20 | 1.2.2 | ● |
+| 1.3.6 | Infrastruktur produksi | 1 Feb | 5 Mar | 25 | 1.2.6 | ● |
 | 1.3.7 | Pengujian fungsi dan integrasi | 15 Mar | 19 Mar | 5 | 1.3.1–1.3.6 | ● |
 | 1.3.8 | Uji keamanan pertama | 15 Mar | 24 Mar | 8 | 1.3.5, 1.3.6 | |
 | 1.3.9 | UAT Rilis 1 | 22 Mar | 25 Mar | 4 | 1.3.7 | ● |
 | 1.3.10 | Pemenuhan izin dan pendaftaran sistem elektronik | 18 Jan | 19 Mar | 40 | 1.2.5 | |
 | 1.3.11 | Pelatihan dan pendaftaran UMKM Kota Yogyakarta | 15 Mar | 30 Mar | 11 | 1.3.4 | |
-| 1.3.12 | Kesiapan operasional | 1 Mar | 25 Mar | 14 | 1.2.1 | |
+| 1.3.12 | Kesiapan operasional | 1 Mar | 25 Mar | 14 | 1.2.1 | ● |
 | 1.3.13 | Peluncuran Rilis 1 | 29 Mar | 31 Mar | 3 | 1.3.8–1.3.10, 1.3.12; disetujui Komite (K7) | ● |
 | **1.4** | **Rilis 2** | **5 Apr** | **15 Jun** | | | |
 | 1.4.1 | Desain Rilis 2 | 5 Apr | 23 Apr | 15 | 1.3.13 (M3) | |
-| 1.4.2 | Modul rekomendasi AI | 3 Mei | 28 Mei | 19 | 1.4.1; keputusan lanjut (M4) | ● |
-| 1.4.3 | Aplikasi iOS | 3 Mei | 28 Mei | 19 | 1.4.1; keputusan lanjut (M4) | ● |
+| 1.4.2 | Modul rekomendasi AI | 3 Mei | 28 Mei | 19 | 1.4.1; keputusan lanjut (M4) | |
+| 1.4.3 | Aplikasi iOS | 3 Mei | 28 Mei | 19 | 1.4.1; keputusan lanjut (M4) | |
 | 1.4.4 | Fitur promosi berbayar UMKM | 3 Mei | 21 Mei | 14 | 1.4.1; M4 | |
 | 1.4.5 | Laporan kinerja untuk manajemen | 10 Mei | 28 Mei | 15 | 1.4.1; M4 | |
-| 1.4.6 | Perluasan layanan ke seluruh DIY | 3 Mei | 4 Jun | 23 | M4 | |
+| 1.4.6 | Perluasan layanan ke seluruh DIY | 3 Mei | 4 Jun | 23 | M4 | ● |
 | 1.4.7 | Penambahan kapasitas infrastruktur | 17 Mei | 28 Mei | 10 | M4 | |
-| 1.4.8 | Pengujian fungsi dan integrasi | 31 Mei | 8 Jun | 6 | 1.4.2–1.4.5, 1.4.7 | ● |
+| 1.4.8 | Pengujian fungsi dan integrasi | 31 Mei | 8 Jun | 6 | 1.4.2–1.4.5, 1.4.7 | |
 | 1.4.9 | Uji keamanan kedua | 31 Mei | 9 Jun | 7 | 1.4.2–1.4.5, 1.4.7 | |
-| 1.4.10 | UAT Rilis 2 | 7 Jun | 10 Jun | 4 | 1.4.8 (mulai sebelum 1.4.8 selesai) | ● |
-| 1.4.11 | Pelatihan UMKM empat kabupaten | 17 Mei | 11 Jun | 19 | 1.4.6 (mulai bersamaan); memakai aplikasi Rilis 1 | |
+| 1.4.10 | UAT Rilis 2 | 7 Jun | 10 Jun | 4 | 1.4.8 (mulai sebelum 1.4.8 selesai) | |
+| 1.4.11 | Pelatihan UMKM empat kabupaten | 17 Mei | 11 Jun | 19 | 1.4.6 (mulai 2 minggu setelah 1.4.6 dimulai); memakai aplikasi Rilis 1 | ● |
 | 1.4.12 | Peluncuran Rilis 2 | 14 Jun | 15 Jun | 2 | 1.4.6, 1.4.9–1.4.11; disetujui Komite (K7) | ● |
 | **1.5** | **Serah terima dan penutupan** | **17 Mei** | **30 Jun** | | | |
-| 1.5.1 | Dokumentasi teknis dan panduan operasional | 17 Mei | 25 Jun | 29 | 1.3.13 | |
+| 1.5.1 | Dokumentasi teknis dan panduan operasional | 17 Mei | 25 Jun | 29 | 1.3.13 | ● |
 | 1.5.2 | Alih pengetahuan ke tim operasional | 16 Jun | 25 Jun | 8 | 1.4.12 (M5) | ● |
 | 1.5.3 | Berita acara serah terima | 28 Jun | 30 Jun | 3 | 1.5.1, 1.5.2 | ● |
 | 1.5.4 | Penutupan kontrak proyek | 21 Jun | 29 Jun | 7 | 1.4.12 (M5) | |
-| 1.5.5 | Laporan akhir dan *lessons learned* | 21 Jun | 30 Jun | 8 | 1.4.12 (M5) | |
+| 1.5.5 | Laporan akhir dan *lessons learned* | 21 Jun | 30 Jun | 8 | 1.4.12 (M5) | ● |
 
 Semua tanggal dalam tahun 2027.
 
 **Jalur kritis**
 
-M1 → 1.2.4 Kontrak mitra → 1.3.3 Modul *digital wallet* → 1.3.7 Pengujian → 1.3.9 UAT → 1.3.13 Peluncuran Rilis 1 (M3) → 1.1.6 Evaluasi → **M4** → 1.4.2/1.4.3 AI dan iOS → 1.4.8 Pengujian → 1.4.10 UAT → 1.4.12 Peluncuran Rilis 2 (M5) → 1.5.2 Alih pengetahuan → 1.5.3 Serah terima (M6).
+Karena tanggal *milestone* ditetapkan lebih dulu, jalur kritis proyek ini terbagi menjadi **dua ruas**:
+
+- **Ruas Rilis 1 (Januari s.d. M3):** M1 → 1.2.1 Kebutuhan pengguna → 1.2.2/1.2.3 Arsitektur dan desain, sejajar dengan 1.2.4 Kontrak mitra → 1.2.6 Lingkungan pengembangan → 1.3.1–1.3.6 Pembangunan modul → 1.3.7 Pengujian → 1.3.9 UAT → 1.3.13 Peluncuran Rilis 1 (M3).
+- **Ruas Rilis 2 (M4 s.d. M6):** M4 → 1.4.6 Perluasan layanan ke seluruh DIY → 1.4.11 Pelatihan UMKM empat kabupaten → 1.4.12 Peluncuran Rilis 2 (M5) → 1.5.1/1.5.2 Dokumentasi dan alih pengetahuan → 1.5.3 Serah terima (M6).
+
+**April**, antara M3 dan M4, adalah satu-satunya bagian jadwal yang punya kelonggaran, karena keputusan M4 sudah bertanggal tetap (30 April).
 
 Catatan:
 1. **Kontrak mitra pembayaran menjadi titik paling rawan.** Modul *wallet* tidak bisa dibangun dan diuji tanpa akses ke sistem mitra pembayaran. Bila kontrak mundur dari 29 Januari, Rilis 1 ikut mundur. Hal ini dicatat di Risk Register.
-2. **Pekerjaan yang punya waktu longgar** (contoh): 1.3.10 Izin (selesai 19 Mar, peluncuran 29 Mar, longgar 4 hari kerja); 1.4.6 Perluasan layanan DIY (selesai 4 Jun, peluncuran 14 Jun, longgar 5 hari kerja); 1.4.4 Promosi berbayar (selesai 21 Mei, pengujian 31 Mei, longgar 5 hari kerja).
+2. **Pekerjaan yang punya waktu longgar** (contoh): 1.3.10 Izin (selesai 19 Mar, peluncuran 29 Mar, longgar 4 hari kerja) dan 1.4.4 Promosi berbayar (selesai 21 Mei, pengujian 31 Mei, longgar 5 hari kerja). Sembilan paket lain **hampir kritis**, dengan longgar hanya 1 hari: 1.1.6, 1.3.8, 1.4.2, 1.4.3, 1.4.5, 1.4.7, 1.4.8, 1.4.10, dan 1.5.4.
 3. **Waktu efektif Rilis 1 sempit.** Pembangunan berlangsung 25 hari kerja (1 Feb–5 Mar), bertepatan dengan bulan Ramadan (± 8 Feb–9 Mar 2027 [CEK]), lalu langsung disusul cuti bersama. Pengujian sampai peluncuran hanya 12 hari kerja (15–31 Mar).
-4. **Waktu Rilis 2 juga sempit.** Setelah M4, AI dan iOS hanya punya 19 hari kerja. Ini harga yang dibayar karena dana Rilis 2 ditahan sampai ada keputusan di M4. Desain Rilis 2 (1.4.1) yang dikerjakan pada April mengurangi tekanan ini.
+4. **Waktu Rilis 2 juga sempit.** Setelah M4, AI dan iOS hanya punya 19 hari kerja, dengan longgar 1 hari. Ini harga yang dibayar karena dana Rilis 2 ditahan sampai ada keputusan di M4. Desain Rilis 2 (1.4.1) yang dikerjakan pada April mengurangi tekanan ini. Namun penentu selesainya Rilis 2 **bukan AI**, melainkan **pekerjaan lapangan**: perluasan layanan kurir dan pelatihan UMKM di empat kabupaten.
+5. **Jadwal sangat rapat.** Sebanyak 24 dari 42 paket kerja (di luar 1.1.4 dan 1.1.5) tidak punya waktu longgar sama sekali. Keterlambatan di hampir mana pun pada Januari–Maret atau Mei–Juni langsung menggeser *milestone*.
+6. **Perbedaan dengan Gantt ClickUp.** Batang merah di Gantt ClickUp adalah jalur kritis yang dihitung ClickUp sendiri. Perhitungan itu tidak memakai kalender libur proyek (cuti bersama dan hari libur nasional), dan tidak memuat enam hubungan "mulai bersamaan" atau "mulai sebelum pendahulu selesai", karena ClickUp hanya mengenal pola "selesai lalu mulai". Karena itu warna di ClickUp bisa sedikit berbeda dengan tanda ● di Tabel 2.13. Yang dipakai sebagai acuan adalah Tabel 2.13.
 
 **Pemindahan ke ClickUp:** setiap baris Tabel 2.13 menjadi satu *task* dengan kode WBS di awal namanya, dikelompokkan per level 2 (*list*). Pendahulu diisi sebagai *dependency* (*waiting on*), dan M0–M6 dibuat sebagai *milestone*. Tangkapan layar tampilan Gantt dimasukkan ke laporan, ditambah tautan publik seperti di Tugas 2.
 
