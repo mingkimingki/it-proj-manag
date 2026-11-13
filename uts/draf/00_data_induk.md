@@ -133,6 +133,18 @@ Prinsip ini berlaku sebagai **kendala proyek** dan dicantumkan di Business Case 
 | Wewenang PM | Perubahan biaya ≤ Rp 250 juta dan pergeseran jadwal ≤ 1 minggu (tanpa menggeser *milestone*). Di atas itu, perubahan lingkup, dan pemakaian dana cadangan memerlukan persetujuan Komite Pengarah | Charter, Risk Register |
 | Kriteria keberhasilan | Kriteria proyek (tanggung jawab PM) dipisahkan dari indikator manfaat awal 1.000 UMKM / 20.000 pembeli (tanggung jawab Business Development dan Sponsor) | Charter, analisis komparatif |
 
+## 11. Asumsi teknis (keputusan pengguna: opsi A, ringkas, tanpa merek atau produk)
+
+Butir di bawah ini **bukan rancangan sistem**, melainkan asumsi teknis yang menopang keputusan manajerial. Rincian teknologinya menjadi wewenang Kepala Software Engineering dan Kepala Infrastructure & Cybersecurity.
+
+| No | Asumsi | Menopang keputusan | Dipakai di |
+|---|---|---|---|
+| AT1 | Aplikasi seluler dibangun dengan **kerangka lintas platform**: satu kode program untuk Android dan iOS | Aplikasi iOS cukup 19 hari kerja di Rilis 2, karena sebagian besar kode Rilis 1 dipakai ulang | Scope Statement, Gantt (1.4.3), Risk Register (R09) |
+| AT2 | **Arsitektur modular**: setiap modul (*marketplace*, pengiriman, *wallet*, AI) terpisah dan saling terhubung lewat antarmuka standar (API, *Application Programming Interface*) | Mitra kurir bisa diganti; tim bisa dibagi per modul; satu modul bermasalah tidak menghentikan modul lain | Risk Register (R03), Tabel 3.9, Tabel 3.15 (*decoupling*) |
+| AT3 | Layanan *cloud* dengan **pusat data di Indonesia**, ditambah cadangan data di lokasi pusat data yang berbeda | Perlindungan data pribadi pengguna; pemulihan bila pusat data utama terganggu | Risk Register (R05, R06), kriteria K1 |
+| AT4 | Integrasi pembayaran dan pengiriman memakai **sistem uji (*sandbox*) milik mitra** sebelum terhubung ke sistem sungguhan | Pembangunan *wallet* bisa dimulai sebelum kontrak final; pengujian tidak memakai uang sungguhan | Gantt (1.3.2, 1.3.3), Risk Register (R02) |
+| AT5 | Rekomendasi AI di Rilis 2 memakai **data transaksi Rilis 1** yang sudah dianonimkan (identitas pengguna dihapus) | AI tidak dibangun di Rilis 1; perlindungan data pribadi tetap terjaga | Scope Statement, Tabel 3.13, analisis komparatif (9) |
+
 ---
 
 ## Catatan perubahan
@@ -145,3 +157,4 @@ Prinsip ini berlaku sebagai **kendala proyek** dan dicantumkan di Business Case 
 | 13 Nov 2026 | Tambah Bagian 10 "Tata kelola proyek"; catatan bahwa *wallet* memakai izin mitra pembayaran |
 | 13 Nov 2026 | Bagian 3: wilayah perluasan Rilis 2 (seluruh DIY) dan platform (Android + web; iOS di Rilis 2) diputuskan |
 | 13 Nov 2026 | Bagian 2: tambah catatan Isra Mikraj dekat M1. Bagian 9: "NPV negatif" diganti "ROI negatif" (NPV tidak dipakai, sesuai prinsip tanpa riba) |
+| 13 Nov 2026 | Tambah Bagian 11 "Asumsi teknis" (AT1–AT5) |

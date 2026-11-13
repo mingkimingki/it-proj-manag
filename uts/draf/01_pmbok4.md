@@ -516,6 +516,8 @@ Kepala divisi menandatangani atas nama anggota timnya masing-masing.
 
 **Kendala dan asumsi:** sesuai Business Case bagian 4.0 (waktu 6 bulan, biaya Rp 15 miliar, regulasi, prinsip tanpa riba P1–P4, cuti bersama Idulfitri; asumsi kesediaan paguyuban, kontrak mitra paling lambat 29 Januari 2027, ketersediaan tim, dan penyelesaian izin sebelum Rilis 1).
 
+**Asumsi teknis:** (1) aplikasi seluler dibangun dengan kerangka lintas platform, yaitu satu kode program untuk Android dan iOS, sehingga aplikasi iOS di Rilis 2 memakai ulang sebagian besar kode Rilis 1; (2) arsitektur modular, yaitu setiap modul terpisah dan terhubung lewat antarmuka standar (API, *Application Programming Interface*), sehingga mitra kurir bisa diganti tanpa membongkar modul lain; (3) layanan *cloud* dengan pusat data di Indonesia, ditambah cadangan data di lokasi lain; (4) integrasi pembayaran dan pengiriman diuji lebih dulu di sistem uji (*sandbox*) milik mitra; (5) rekomendasi AI memakai data transaksi Rilis 1 yang sudah dianonimkan. Pilihan teknologi rinci menjadi wewenang Kepala Software Engineering dan Kepala Infrastructure & Cybersecurity.
+
 **Kriteria penerimaan**
 
 Setiap rilis dinyatakan **diterima** bila semua kriteria berikut terpenuhi:
