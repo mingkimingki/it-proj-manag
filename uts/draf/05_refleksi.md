@@ -1,6 +1,6 @@
 # Bab 5 — Refleksi Manajerial
 
-> Berkas kerja UTS (tidak ikut ke laporan). Disusun dari jawaban penulis (13 Nov 2026). Isi dan pendapat dari penulis; Claude hanya mengurutkan, menambah kata sambung, dan membetulkan ejaan. Kalimat tambahan Claude (disetujui penulis): rujukan ke Risk Register, NPV, kriteria K1, kasus PDNS 2, contoh ahli, dan data jadwal di paragraf jangka waktu.
+> Berkas kerja UTS (tidak ikut ke laporan). Disusun dari jawaban penulis (13 Nov 2026). Isi dan pendapat dari penulis; Claude hanya mengurutkan, menambah kata sambung, dan membetulkan ejaan. Kalimat tambahan Claude (disetujui penulis): rujukan ke Risk Register, NPV, kriteria K1, kasus PDNS 2, contoh ahli, data jadwal di paragraf jangka waktu, dan kalimat tentang Team Contract dan RACI.
 
 Sebelum mengerjakan tugas ini, saya masih baru mempelajari manajemen proyek TI. Setelah menyusun sepuluh dokumen PMBOK 4 dan menerapkan PMBOK 7 pada kasus Nusantara Express, ternyata seorang PM harus banyak menyusun dokumen proyek dan berkoordinasi dengan banyak pihak, misalnya stakeholder. Tugasnya lebih ke aspek manajerial daripada teknis, dan seorang PM harus banyak bertanya kepada ahli.
 
@@ -10,4 +10,4 @@ Kedua, tentang layanan *cloud*. Menurut saya, layanan *cloud* adalah fungsi vita
 
 Ketiga, tentang jangka waktu. Menurut saya, jangka waktu pengembangan enam bulan itu terlalu cepat dan dipaksakan. Hal ini juga terlihat dari jadwal yang saya susun sendiri: 24 dari 42 paket kerja tidak punya waktu longgar sama sekali, pembangunan Rilis 1 bertepatan dengan bulan Ramadan lalu langsung disusul cuti Idulfitri, dan Rilis 2 hanya punya 19 hari kerja untuk membangun AI dan aplikasi iOS. Mungkin perlu dilakukan studi banding dengan proyek serupa dan bertanya kepada ahli sebelum target waktu ditetapkan. Namun, ini hanya pandangan saya sebagai orang awam yang belum pernah menjadi PM.
 
-Karena dalam sebuah proyek banyak aspek yang harus diperhatikan, hal pertama yang akan saya lakukan bila menjadi PM proyek ini adalah menemui para ahli untuk berkonsultasi, misalnya ahli keuangan syariah dan ahli infrastruktur, karena seorang PM belum tentu ahli dalam semua hal.
+Karena dalam sebuah proyek banyak aspek yang harus diperhatikan, hal pertama yang akan saya lakukan bila menjadi PM proyek ini adalah menemui para ahli untuk berkonsultasi, misalnya ahli keuangan syariah dan ahli infrastruktur, karena seorang PM belum tentu ahli dalam semua hal. Dokumen proyek tidak bisa dikerjakan PM sendiri, begitu pula proyeknya. PM butuh sebuah tim yang bisa membantunya dalam segala bidang. Karena itu, dokumen seperti Team Contract dan matriks RACI menjadi penting, supaya setiap bagian pekerjaan punya penanggung jawab yang jelas.

@@ -674,11 +674,12 @@ def render(md):
                 raise SystemExit(f"Judul tanpa tabel/gambar: {judul_tertunda}")
             tingkat = len(s) - len(s.lstrip("#"))
             teks = s[tingkat:].strip()
-            if tingkat == 1:
-                if not pertama_h1:
-                    doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
-                pertama_h1 = False
             h = doc.add_heading("", level=min(tingkat, 4))
+            if tingkat == 1:
+                # "Mulai di halaman baru" pada judul bab, bukan paragraf pemisah: tidak menyisakan halaman kosong
+                # bila halaman sebelumnya pas penuh.
+                h.paragraph_format.page_break_before = not pertama_h1
+                pertama_h1 = False
             isi_runs(h, teks)
             h.paragraph_format.keep_with_next = True
             if tingkat <= 3:
