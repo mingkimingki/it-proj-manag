@@ -416,3 +416,163 @@ Kesepakatan ini ditinjau ulang setelah Rilis 1.
 | Struktur tim | Per divisi; PM mengatur penugasan | Tim lintas fungsi per modul; Product Owner menentukan prioritas, tim menentukan cara |
 | Kepemimpinan | PM sebagai pengendali (proses 9.4 *Manage Project Team*) | Gabungan terpusat dan tersebar; *servant leadership* |
 | Aturan tim | Team Contract sekali untuk seluruh proyek | Team Contract ditambah kesepakatan per tim yang bisa diperbarui |
+
+---
+
+## 3.3 Planning
+
+Bagian ini merujuk tiga *performance domain* PMBOK 7:
+- ***Development Approach and Life Cycle*** (*Guide* bagian 2.3, hlm 32–50): memilih pendekatan pengembangan;
+- ***Planning*** (*Guide* bagian 2.4, hlm 51–68): menyusun rencana;
+- ***Uncertainty*** (*Guide* bagian 2.8, hlm 116–129): menghadapi ketidakpastian.
+
+Menurut PMBOK 7, perencanaan yang baik memenuhi tiga syarat (*Guide* hlm 51):
+- waktunya sepadan dengan situasi;
+- informasinya cukup untuk mengelola harapan stakeholder;
+- ada cara untuk **menyesuaikan rencana** ketika kebutuhan atau kondisi berubah.
+
+> Keputusan pengguna (13 Nov 2026): pendekatan *hybrid*; *sprint* 2 minggu; perencanaan bertingkat dengan Rilis 1 sebagai MVP; pemetaan risiko ke empat jenis ketidakpastian; catatan tentang cadangan waktu.
+> Isi di bawah ini: **[USULAN]**.
+
+### 3.3.1 Pendekatan perencanaan adaptif dan *incremental*
+
+#### (a) Mengapa *hybrid*
+
+PMBOK 7 membagi faktor pemilihan pendekatan pengembangan ke dalam tiga kelompok: **produk**, **proyek**, dan **organisasi** (*Guide* hlm 39–41). Penilaian faktor-faktor itu untuk proyek ini:
+
+**Tabel 3.12 Faktor pemilihan pendekatan pengembangan**
+
+| Kelompok | Faktor (*Guide* hlm 39–41) | Kondisi Nusantara Express | Mengarah ke |
+|---|---|---|---|
+| Produk | Tingkat inovasi | Rekomendasi AI baru bagi perusahaan; *marketplace* dan pembayaran sudah umum | AI: adaptif. Lainnya: prediktif |
+| Produk | Kepastian kebutuhan | Kebutuhan pembayaran dan keamanan jelas. Kebutuhan UMKM akan fitur belum pasti | Campuran |
+| Produk | Kemudahan perubahan | Integrasi uang sulit diubah setelah jadi. Tampilan dan katalog mudah diubah | Campuran |
+| Produk | Pilihan penyerahan | Produk bisa diserahkan bertahap (dua rilis) | *Incremental* |
+| Produk | Risiko, keamanan, regulasi | Uang dan data pribadi; izin pembayaran dan pendaftaran sistem elektronik | Prediktif untuk bagian ini |
+| Proyek | Stakeholder | UMKM dan Paguyuban bisa dilibatkan rutin; ada Product Owner | Adaptif |
+| Proyek | Batasan jadwal | Perlu sesuatu yang bisa dipakai lebih awal (31 Maret) | *Incremental* |
+| Proyek | **Ketersediaan dana** | Dana Rilis 2 belum pasti, karena bergantung pada keputusan M4 | **MVP lalu investasi bertahap** |
+| Organisasi | Struktur dan budaya | Perusahaan berjenjang (Direksi, Komite Pengarah) dan terbiasa dengan rencana dan laporan | Prediktif di tingkat *milestone* |
+| Organisasi | Ukuran dan lokasi tim | ± 50 orang, terbagi dalam tim 6–12 orang, sebagian besar di satu kantor | Tim modul adaptif, dikoordinasi secara prediktif |
+
+**Kesimpulan:** tidak ada satu pendekatan yang cocok untuk semua bagian. Karena itu dipakai pendekatan ***hybrid*** (campuran):
+
+**Tabel 3.13 Pendekatan per komponen**
+
+| Komponen (kode WBS) | Pendekatan | Bentuk rencana |
+|---|---|---|
+| Infrastruktur dan keamanan (1.2.6, 1.3.5, 1.3.6, 1.3.8, 1.4.7, 1.4.9) | Prediktif | Jadwal tetap (Tabel 2.13); kriteria K1–K4 |
+| Izin dan kepatuhan (1.2.5, 1.3.10) | Prediktif | Peta izin dengan tenggat; kriteria K6 |
+| Integrasi pembayaran (1.2.4, 1.3.3) | Prediktif | Spesifikasi mengikuti mitra pembayaran; kontrak, *sandbox*, uji kepatuhan |
+| *Marketplace*, dasbor, promosi, laporan (1.3.1, 1.3.4, 1.4.4, 1.4.5) | Adaptif | Daftar kebutuhan berprioritas, dikerjakan per *sprint* |
+| Pengiriman dan *tracking* (1.3.2, 1.4.6) | Campuran | Integrasi kurir prediktif; tampilan pelacakan dan notifikasi adaptif |
+| Rekomendasi AI (1.4.1, 1.4.2) | Adaptif | Eksperimen per *sprint* dengan data transaksi Rilis 1 |
+| Pelatihan, lapangan, serah terima (1.3.11, 1.3.12, 1.4.11, 1.5) | Prediktif | Jadwal tetap terkait *milestone* |
+
+#### (b) Perencanaan bertingkat
+
+Pada pendekatan adaptif, rencana disusun **bertahap**. *Roadmap* produk menjadi dasar rencana rilis, dan rencana rilis dipecah menjadi rencana iterasi (*Guide* hlm 61, Gambar 2-17). Makin dekat waktunya, makin rinci rencananya. PMBOK 7 menyebut cara ini ***progressive elaboration*** (*Guide* hlm 120). Bentuknya di tingkat jadwal adalah ***rolling wave planning*** (*Guide* hlm 49).
+
+**Gambar 3.3 Tiga lapis rencana**
+
+```
+LAPIS 1  ROADMAP 6 BULAN (tetap)         M0 ─ M1 ─ M2 ──────── M3 ──── M4 ──────── M5 ─ M6
+         milestone, anggaran, K1–K7      4 Jan  6 Jan  29 Jan  31 Mar  30 Apr  15 Jun  30 Jun
+             │
+LAPIS 2  RENCANA RILIS (ditinjau di M2 dan M4)
+         Rilis 1: isi wajib + pelengkap   Rilis 2: dirinci pada April (1.4.1), setelah data Rilis 1 ada
+             │
+LAPIS 3  RENCANA SPRINT (disusun tim di awal tiap sprint)
+         S0 desain │ S1 │ S2 │ S3* │ uji+UAT │ S4' desain R2 │ ── M4 ── │ S4 │ S5 │ uji+UAT
+```
+
+**Tabel 3.14 Jadwal *sprint*** (*sprint* = putaran kerja dengan waktu tetap, atau *timebox*, yang diakhiri demo hasil kerja; *Guide* hlm 61–62)
+
+| *Sprint* | Tanggal (2027) | Isi utama | Demo |
+|---|---|---|---|
+| S0 (persiapan, prediktif) | 7–29 Jan | Kebutuhan, arsitektur, desain, kontrak (WBS 1.2) | Prototipe ke UMKM; persetujuan M2 |
+| S1 | 1–12 Feb | Fitur wajib *marketplace*, *wallet*, dan pengiriman, tahap pertama | 12 Feb |
+| S2 | 15–26 Feb | Fitur wajib, tahap kedua; dasbor web | 26 Feb |
+| S3* | 1–5 Mar | **Dipendekkan menjadi 1 minggu** karena cuti bersama 8–12 Mar. Menuntaskan fitur wajib | 5 Mar |
+| — | 15–25 Mar | Pengujian, uji keamanan, UAT (prediktif) | UAT |
+| S4' (desain Rilis 2) | 5–23 Apr | Desain Rilis 2 dan eksperimen awal AI, oleh tim kecil sebelum M4 | Bahan keputusan M4 |
+| S4 | 3–14 Mei | AI dan iOS, tahap pertama; promosi berbayar | 14 Mei |
+| S5 | 17–28 Mei | AI dan iOS, tahap kedua; laporan kinerja | 28 Mei |
+| — | 31 Mei – 10 Jun | Pengujian, uji keamanan, UAT (prediktif) | UAT |
+
+Panjang *sprint* 2 minggu dipilih karena sama dengan jadwal demo kepada Paguyuban (Tabel 3.8). Panjang ini juga cukup pendek untuk umpan balik, tanpa membuat waktu kerja habis untuk rapat.
+
+#### (c) Rilis 1 sebagai MVP
+
+***MVP*** (*Minimum Viable Product*) adalah versi produk paling sederhana yang sudah berguna. MVP bisa dirilis dengan investasi lebih kecil untuk menguji pasar, lalu investasi berikutnya disesuaikan dengan tanggapan pasar (*Guide* hlm 41). Rilis 1 berperan sebagai MVP: satu kota, satu platform seluler, tanpa AI.
+
+Agar Rilis 1 tetap selesai walaupun waktunya sempit, kebutuhannya dibagi dua:
+
+| Jenis | Isi Rilis 1 | Bila waktu tidak cukup |
+|---|---|---|
+| **Wajib** (satu transaksi utuh bisa terjadi) | Pendaftaran dan verifikasi UMKM; katalog dan pencarian; keranjang dan pemesanan; pembayaran *wallet* dan pencairan dana; integrasi kurir, pelacakan, notifikasi; dasbor penjualan dasar; panel admin; fitur keamanan | Tidak boleh dikurangi. Bila terancam, *milestone* M3 dibahas di Komite Pengarah |
+| **Pelengkap** | Ulasan produk; riwayat transaksi rinci; laporan dasbor yang lebih lengkap | Boleh digeser ke Rilis 2 lewat pengendalian perubahan lingkup. Komite Pengarah memutuskan, karena ulasan termasuk lingkup Rilis 1 di Scope Statement |
+
+**Apa yang tetap dan apa yang lentur:**
+- **Tetap:** *milestone* M0–M6, anggaran Rp 15 miliar, kriteria penerimaan K1–K7, prinsip P1–P4, dan butir di luar lingkup L1–L8.
+- **Lentur:** urutan pengerjaan di dalam *sprint* dan pembagian fitur pelengkap antara Rilis 1 dan Rilis 2.
+
+Inilah titik temu kedua pendekatan. Di tingkat Komite, proyek dikendalikan secara prediktif. Di tingkat tim, pekerjaan disusun secara adaptif.
+
+### 3.3.2 Strategi manajemen risiko berbasis kompleksitas dan ketidakpastian
+
+Di PMBOK 7, **risiko hanyalah satu bagian dari ketidakpastian** (*Guide* hlm 122). Selain risiko, ada **ambiguitas**, **kompleksitas**, dan **volatilitas**. Masing-masing punya cara penanganan yang berbeda, dan sebagian besar caranya bukan berupa daftar, melainkan **cara kerja**.
+
+#### (a) Pemetaan risiko ke jenis ketidakpastian
+
+**Tabel 3.15 Empat jenis ketidakpastian**
+
+| Jenis (*Guide*) | Arti | Risiko terkait (Tabel 2.15) | Cara PMBOK 7 | Penerapan di proyek |
+|---|---|---|---|---|
+| **Ambiguitas** (hlm 120) | Tidak jelas apa yang terjadi atau apa yang dibutuhkan. Ada dua jenis: **konseptual** (istilah dimaknai berbeda) dan **situasional** (beberapa kemungkinan hasil) | R01, R09, R12 | Elaborasi progresif, eksperimen, prototipe | Istilah "UMKM aktif" didefinisikan tegas (minimal 1 transaksi per bulan), sehingga tidak ada beda tafsir di M4. Prototipe diuji ke UMKM (1.2.3). Satu kota percontohan menjadi eksperimen. Desain AI ditunda sampai ada data |
+| **Kompleksitas** (hlm 120–121) | Banyak unsur saling memengaruhi, sehingga hasil sulit diramalkan | R01, R02, R03, R06 | Memisahkan bagian sistem (*decoupling*); membangun bertahap (*iterate*); melibatkan stakeholder (*engage*); cadangan bagi bagian kritis (*fail safe*) | Modul dipisah dengan antarmuka standar, sehingga kurir bisa diganti (R03). Dua rilis dan demo per *sprint*. Paguyuban dilibatkan rutin. Cadangan data di lokasi lain (R06). Bila pelacakan *real-time* terganggu, status pesanan tetap terkirim lewat notifikasi |
+| **Volatilitas** (hlm 122) | Kondisi berubah cepat dan tidak terduga, biasanya berdampak ke biaya dan jadwal | R04, R08, R10 | Analisis alternatif; cadangan biaya atau waktu | Mitra pembayaran dan kurir cadangan disiapkan. Jadwal disesuaikan setelah SKB libur terbit. Fitur pelengkap menjadi penyangga waktu (butir c) |
+| **Risiko** (hlm 122–127) | Kejadian tidak pasti yang berdampak positif (peluang) atau negatif (ancaman) | Semua, R01–R12 | Respons ancaman dan peluang; ambang risiko; cadangan | Risk Register (Tabel 2.15–2.16), ditambah peluang (butir b) dan pemilahan cadangan (butir c) |
+
+Satu risiko bisa masuk lebih dari satu jenis. R01 (adopsi) adalah contoh paling jelas. Risiko ini bersifat **ambigu** karena belum diketahui apa yang membuat UMKM mau pindah, dan sekaligus **kompleks** karena merupakan interaksi antara penjual dan pembeli. Karena itu, penanganannya tidak cukup lewat satu baris di Risk Register. R01 ditangani lewat rangkaian cara kerja: MVP, eksperimen satu kota, keterlibatan Paguyuban, dan gerbang M4.
+
+PMBOK 7 juga menyebut empat cara umum menghadapi ketidakpastian (*Guide* hlm 119). Wujudnya di proyek ini:
+- **Mengumpulkan informasi**: peta izin, survei kebutuhan, data Rilis 1.
+- **Bersiap untuk beberapa kemungkinan hasil**: di M4 tersedia tiga pilihan, yaitu lanjut, sesuaikan, atau hentikan.
+- **Menjajaki beberapa rancangan sejak awal** (*set-based design*): dua pendekatan rekomendasi AI dicoba pada April, lalu satu dipilih.
+- **Membangun ketahanan**: tim lintas fungsi dan kesepakatan kerja yang ditinjau ulang.
+
+Alat bantu seperti *Cynefin* dan *Stacey Matrix* (*Guide* hlm 164–165) memetakan tingkat kompleksitas untuk memilih pendekatan. Keduanya tidak dipakai di sini, karena pemilihan pendekatan sudah dilakukan dengan faktor di Tabel 3.12.
+
+#### (b) Ambang risiko dan peluang
+
+- **Ambang risiko** (*risk threshold*) adalah batas penyimpangan yang masih dapat diterima organisasi, dan biasanya dituangkan dalam definisi tingkat dampak (*Guide* hlm 122). Di proyek ini, ambang tersebut sudah ada di skala dampak Tabel 2.14. Dampak sampai Rp 250 juta atau 1 minggu masih dalam wewenang PM. Di atas itu harus dibawa ke Komite.
+- **Peluang.** Risk Register di Bab 2 hanya berisi **ancaman**, padahal PMBOK 4 pun sudah mengenal strategi untuk peluang (hlm 304–305). PMBOK 7 menegaskannya lagi dalam domain ketidakpastian (*Guide* hlm 125–126). Dua peluang ditambahkan:
+
+**Tabel 3.16 Peluang**
+
+| No | Peluang | Strategi | Tindakan | Pemilik |
+|---|---|---|---|---|
+| O1 | Dinas Koperasi dan UKM DIY bersedia memasukkan pelatihan Nusantara Express ke program pembinaan UMKM-nya, sehingga jangkauan pelatihan lebih luas dan adopsi naik | *Enhance* (memperbesar peluang) | Audiensi pada awal proyek (Tabel 2.2, S20); menawarkan materi pelatihan siap pakai | Yusuf Kamil Hidayat (BD) |
+| O2 | Liburan sekolah akhir Juni dan kunjungan wisatawan ke Yogyakarta menaikkan permintaan oleh-oleh produk UMKM tepat setelah Rilis 2 | *Exploit* (memastikan peluang terwujud) | Kampanye "oleh-oleh lokal" saat peluncuran Rilis 2; UMKM oleh-oleh diprioritaskan dalam pelatihan 1.4.11 | Yusuf Kamil Hidayat (BD) |
+
+#### (c) Cadangan biaya dan waktu
+
+PMBOK 7 membedakan dua jenis cadangan (*Guide* hlm 62, 127):
+- ***Contingency reserve*** (cadangan kontingensi): untuk risiko yang **sudah teridentifikasi**, bila risiko itu terjadi.
+- ***Management reserve*** (cadangan manajemen): untuk kejadian yang **tidak diketahui sebelumnya**, yaitu pekerjaan tak terencana yang masih dalam lingkup.
+
+**Temuan atas rencana Bab 2:**
+1. **Cadangan biaya Rp 1,5 miliar masih satu pos.** Dengan cara pandang PMBOK 7, pos ini sebaiknya dipilah: ± Rp 1,0 miliar sebagai cadangan kontingensi untuk R01–R12, dipakai lewat persetujuan Komite Pengarah, dan ± Rp 0,5 miliar sebagai cadangan manajemen yang dipegang Sponsor. Jumlah anggaran tidak berubah, hanya penggunaannya yang lebih jelas. Seluruhnya tetap berasal dari modal sendiri (P1).
+2. **Jadwal tidak punya cadangan waktu.** Jadwal di Tabel 2.13 hanya punya sedikit waktu longgar di luar jalur kritis. Tidak ada penyangga sebelum M3 dan M5. Ini kelemahan rencana PMBOK 4 yang disusun di sini.
+3. **Pendekatan *hybrid* memberi jalan keluar tanpa menggeser tanggal**: **lingkup menjadi penyangga**. Waktu (*sprint* dan *milestone*) dibuat tetap, sedangkan fitur pelengkap yang lentur. Bila *sprint* tertinggal, fitur pelengkap digeser lewat Komite. Cara ini menjawab R08 dan R09 tanpa meminta tambahan waktu atau biaya.
+
+#### Ringkasan perbedaan dengan PMBOK 4
+
+| Aspek | PMBOK 4 (Bab 2) | PMBOK 7 (Bagian 3.3) |
+|---|---|---|
+| Pendekatan | Satu rencana rinci di awal (WBS, Gantt) | Dipilih per komponen berdasarkan faktor produk, proyek, dan organisasi (*hybrid*) |
+| Kerincian rencana | Semua paket kerja dijadwalkan di Januari | Bertingkat: *roadmap* tetap, rencana rilis ditinjau di M2 dan M4, rencana *sprint* dibuat tiap 2 minggu |
+| Yang dikunci | Lingkup, waktu, dan biaya | Waktu, biaya, dan kriteria mutu dikunci; fitur pelengkap lentur |
+| Ketidakpastian | Daftar ancaman dengan skor P × D | Empat jenis ketidakpastian; sebagian ditangani lewat cara kerja (MVP, eksperimen, *decoupling*); peluang ikut dikelola |
+| Cadangan | Satu pos cadangan biaya | Cadangan kontingensi dan manajemen dipilah; lingkup sebagai penyangga waktu |
