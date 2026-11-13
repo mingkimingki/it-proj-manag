@@ -157,7 +157,7 @@ Beberapa istilah di contoh ini:
 
 ### 4.4 Aturan penting
 
-- **Aturan 100%** (*100% rule*, PMBOK 4, Bagian 5.3, hlm. 120). Jumlah semua pekerjaan di level bawah harus sama dengan pekerjaan di level atasnya. Tidak boleh ada yang terlewat, dan tidak boleh ada pekerjaan di luar lingkup. Itu sebabnya **"1.1 Manajemen Proyek" ikut masuk WBS**: rapat, laporan, dan perencanaan juga pekerjaan.
+- **Aturan 100%** (*100% rule*, PMBOK 4, Bagian 5.3, hlm. 121). Jumlah semua pekerjaan di level bawah harus sama dengan pekerjaan di level atasnya. Tidak boleh ada yang terlewat, dan tidak boleh ada pekerjaan di luar lingkup. Itu sebabnya **"1.1 Manajemen Proyek" ikut masuk WBS**: rapat, laporan, dan perencanaan juga pekerjaan.
 - **WBS berisi hasil kerja (kata benda), bukan langkah-langkah (kata kerja).** Contoh: "Halaman katalog kue", bukan "Mengetik kode HTML".
 - **Milestone tidak dimasukkan ke WBS.** Milestone bukan pekerjaan, melainkan penanda waktu. Tempatnya di jadwal (Bagian 5).
 - **Beri kode bernomor** (1, 1.1, 1.1.1). Kode ini dipakai lagi di jadwal dan daftar risiko.
@@ -769,7 +769,7 @@ Gunakan sekitar 8–12 slide. Satu slide satu pesan.
 **PMBOK**
 - Project Management Institute. (2008). *A guide to the project management body of knowledge (PMBOK® Guide)* (4th ed.). PMI.
   - Gambar 5-9 dan 5-10, hlm. 119–120: contoh WBS per fase dan per *deliverable*
-  - Bagian 5.3, hlm. 120: aturan 100% dan kamus WBS
+  - Bagian 5.3, hlm. 121: aturan 100% dan kamus WBS
   - Bagian 6.2.2.1, hlm. 137 (Gambar 6-7, hlm. 139): *Precedence Diagramming Method*
   - Bagian 6.5.2.2, hlm. 153: *Critical Path Method*
   - Gambar 6-14, hlm. 158: contoh jadwal milestone, Gantt, dan diagram jaringan

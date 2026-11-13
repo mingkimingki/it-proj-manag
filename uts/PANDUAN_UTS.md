@@ -389,7 +389,7 @@ Soal menggabungkannya. Tulis dua sub-bagian agar jelas.
 #### (a) Strategi kolaborasi dan komunikasi dengan stakeholder
 
 - PMBOK 7 memandang keterlibatan stakeholder sebagai **kegiatan terus-menerus**: identifikasi → pahami → prioritaskan → libatkan → pantau (hlm Guide 10–14). Bandingkan dengan PMBOK 4, yang menempatkannya di awal proyek.
-- **Alat yang disarankan:** *Stakeholder Engagement Assessment Matrix* (PMBOK 7 hlm Guide 189). Matriks ini membandingkan tingkat keterlibatan **saat ini** dan **yang diinginkan** (*unaware, resistant, neutral, supportive, leading*) untuk setiap stakeholder. Ini bukan pengulangan Power-Interest Grid.
+- **Alat yang disarankan:** *Stakeholder Engagement Assessment Matrix* (PMBOK 7 hlm Guide 189). Matriks ini membandingkan tingkat keterlibatan **saat ini** dan **yang diinginkan** untuk setiap stakeholder. Ini bukan pengulangan Power-Interest Grid. Lima tingkat yang lazim dipakai (*unaware, resistant, neutral, supportive, leading*) **tidak** tercantum di PMBOK 7, karena hlm 189 hanya mendefinisikan matriksnya. Istilah itu berasal dari PMBOK edisi ke-6, jadi sebutkan asalnya bila dipakai.
 - Rencana komunikasi per kelompok: kanal, frekuensi, bentuk. Contohnya *sprint review*/demo untuk UMKM percontohan, laporan eksekutif untuk direksi, rapat kepatuhan dengan Legal.
 - Perspektif nilai tiap stakeholder (slide 08 hlm 14): manajemen, pengguna, regulator, investor, tim TI.
 
@@ -564,6 +564,8 @@ Lampiran (tabel besar, Gantt ukuran penuh)
 | **5** | Analisis komparatif, refleksi, kesimpulan, glosarium, daftar pustaka. Rapikan format, buat PDF, **unggah ke Waskita sebelum 23.59** | PDF terkumpul |
 
 **Kebiasaan harian:** setiap selesai satu dokumen PMBOK 4, catat satu kalimat di berkas draf: "Kalau dengan PMBOK 7, bagian ini akan…". Catatan ini menjadi bahan utama Bab 4.
+
+**Putuskan individu atau kelompok sebelum Hari 1 selesai**, yaitu sebelum data induk dan dokumen Pra-Inisiasi ditulis. Bergabung ke kelompok di tengah jalan itu mahal: setiap orang sudah punya data induk sendiri (tanggal, anggaran, tokoh, lingkup), padahal konsistensi antardokumen dinilai, sehingga semua dokumen harus disatukan ulang. Bila keputusan baru diambil setelah Hari 1, lebih aman tetap individu.
 
 **Penjaga konsistensi:**
 - **Kerja individu (saat ini):** peran ini dipegang sendiri. Di Hari 3 dan Hari 5, cocokkan semua dokumen dengan tabel data induk (Bagian 5.1).
