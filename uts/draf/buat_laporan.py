@@ -11,7 +11,7 @@ Sumber (urutan di laporan):
     03_komparatif_refleksi.md   Bab 4 (berhenti sebelum "# Bab 5"; bahan refleksi tidak ikut)
     05_refleksi.md              Bab 5 (bila belum ada, dipasang penanda "belum ditulis")
 
-Hasil: ../hasil/UTS_ITPM_EkaPutraKurnia_25.55.2927.docx dan .pdf.
+Hasil: ../hasil/UTS_ITPM_Kelompok_EkaPutraKurnia_CucuTriEkaYuliana.docx dan .pdf.
 PDF dibuat dua kali dengan LibreOffice: putaran pertama untuk membaca nomor halaman, putaran kedua untuk
 mengisi daftar isi, daftar tabel, dan daftar gambar.
 
@@ -28,13 +28,14 @@ from docx.enum.section import WD_ORIENT, WD_SECTION
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK, WD_TAB_ALIGNMENT, WD_TAB_LEADER
 from docx.oxml import OxmlElement
+from docx.opc.constants import RELATIONSHIP_TYPE as RT
 from docx.oxml.ns import qn
 from docx.shared import Cm, Emu, Pt, RGBColor
 from PIL import Image
 
 DRAF = Path(__file__).resolve().parent
 HASIL = DRAF.parent / "hasil"
-NAMA = "UTS_ITPM_EkaPutraKurnia_25.55.2927"
+NAMA = "UTS_ITPM_Kelompok_EkaPutraKurnia_CucuTriEkaYuliana"
 TOKEN = re.compile(r"(\*\*\*|\*\*|\*)")
 WARNA_TINGKAT = {"Rendah": "C6E0B4", "Sedang": "FFE699", "Tinggi": "F4B183", "Sangat tinggi": "FF7C80"}
 ABU, BIRU_TUA, BIRU_MUDA = "E8E8E8", "1F4E79", "DDEBF7"
@@ -135,9 +136,34 @@ def lebar_isi():
     return s.page_width - s.left_margin - s.right_margin
 
 
+URL = re.compile(r"(https?://[^\s)]*[^\s).,;:])")
+
+
+def tautan_luar(par, url, ukuran=None):
+    """Alamat web sebagai tautan ke luar dokumen (biru, bergaris bawah)."""
+    rid = par.part.relate_to(url, RT.HYPERLINK, is_external=True)
+    hl = OxmlElement("w:hyperlink")
+    hl.set(qn("r:id"), rid); hl.set(qn("w:history"), "1")
+    r = par.add_run(url)
+    r.font.color.rgb = RGBColor(0x05, 0x63, 0xC1)
+    r.font.underline = True
+    if ukuran:
+        r.font.size = Pt(ukuran)
+    par._p.remove(r._r); hl.append(r._r); par._p.append(hl)
+
+
 def isi_runs(par, teks, ukuran=None, warna=None):
     tebal = miring = False
-    for bagian in TOKEN.split(teks):
+    potongan = []
+    for bagian in URL.split(teks):
+        if URL.fullmatch(bagian):
+            potongan.append(("url", bagian))
+        else:
+            potongan += [("teks", x) for x in TOKEN.split(bagian)]
+    for jenis, bagian in potongan:
+        if jenis == "url":
+            tautan_luar(par, bagian, ukuran)
+            continue
         if bagian == "***":
             tebal, miring = not tebal, not miring
         elif bagian == "**":
@@ -156,13 +182,14 @@ def isi_runs(par, teks, ukuran=None, warna=None):
 
 def p(teks, align=WD_ALIGN_PARAGRAPH.JUSTIFY, ukuran=None, warna=None):
     par = doc.add_paragraph()
-    par.alignment = align
+    # Paragraf berisi alamat web panjang dibuat rata kiri agar spasi antarkata tidak meregang
+    par.alignment = WD_ALIGN_PARAGRAPH.LEFT if URL.search(teks) and align == WD_ALIGN_PARAGRAPH.JUSTIFY else align
     return isi_runs(par, teks, ukuran, warna)
 
 
 def butir(teks, tingkat=0, nomor=None):
     par = doc.add_paragraph()
-    par.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    par.alignment = WD_ALIGN_PARAGRAPH.LEFT if URL.search(teks) else WD_ALIGN_PARAGRAPH.JUSTIFY
     pf = par.paragraph_format
     kiri = Cm(0.9 + 0.8 * tingkat)
     pf.left_indent, pf.first_line_indent, pf.space_after = kiri, Cm(-0.6), Pt(3)

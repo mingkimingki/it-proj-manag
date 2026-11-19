@@ -1,17 +1,18 @@
 <!-- SAMPUL
 judul: Comparative Project Management Simulation: PMBOK 4th dan 7th Edition
 subjudul: Studi Kasus Pengembangan Platform "Smart Retails & Delivery Super App" (Nusantara Express)
-jenis: Ujian Tengah Semester — IT Project Management (PJ059)
-anggota: EKA PUTRA KURNIA|25.55.2927
-dosen: Dosen Pengampu: Robert Marco, S.T., M.T., Ph.D. · Emha Taufiq Luthfi, S.T., M.Kom., Ph.D. · Dr. Kumara Ari Yuana, S.T., M.T.
+jenis: Ujian Tengah Semester (Kelompok) — IT Project Management (PJ059)
+anggota: EKA PUTRA KURNIA|25.55.2927; CUCU TRI EKA YULIANA|25.55.2844
+dosen: Dosen Pengampu: Melwin Syafrizal, S.Kom., M.Eng., Ph.D.
 prodi: Program Studi S2 PJJ Informatika, Fakultas Ilmu Komputer
 kampus: Universitas Amikom Yogyakarta
 waktu: Semester Ganjil 2026/2027 — November 2026
 logo: ../../tugas1/sumber/logo_amikom.png
-header: UTS IT Project Management — Eka Putra Kurnia (25.55.2927)
+header: UTS IT Project Management — Kelompok Eka Putra Kurnia & Cucu Tri Eka Yuliana
 -->
 
-> Berkas kerja UTS: Bab 1, Bab 6, glosarium, daftar pustaka, dan lampiran. Isi **[USULAN]** (13 Nov 2026), perlu ditinjau penulis.
+> Berkas kerja UTS: Bab 1, Bab 6, glosarium, daftar pustaka, dan lampiran. Isi **[USULAN]** (13 Nov 2026), perlu ditinjau penyusun.
+> Keputusan pengguna (19 Nov 2026): menjadi tugas kelompok (Eka Putra Kurnia, Cucu Tri Eka Yuliana). Tabel 1.2 hanya memuat kontribusi yang sudah pasti; tambahkan bila Cucu mengerjakan bagian lain.
 > Bab 2–5 diambil skrip perakitan dari 01_pmbok4.md, 02_pmbok7.md, 03_komparatif_refleksi.md, dan 05_refleksi.md, lalu disisipkan di tempat penanda di bawah.
 
 # Bab 1 — Pendahuluan
@@ -26,7 +27,7 @@ PT Nusantara Digital Indonesia (PT ND) berencana merancang dan meluncurkan *supe
 
 Proyek ini ditargetkan selesai dalam enam bulan dan melibatkan enam divisi: Software Engineering, UI/UX, Infrastructure & Cybersecurity, Business Development, Operations & Logistics, serta Legal & Compliance.
 
-Dalam simulasi ini penulis berperan sebagai Project Manager. Tugasnya menyusun dokumen manajemen proyek dengan dua edisi panduan PMI, lalu membandingkan keduanya:
+Dalam simulasi ini, kelompok penyusun berperan sebagai Project Manager. Di dalam dokumen proyek, jabatan Project Manager diisi oleh Eka Putra Kurnia. Tugasnya menyusun dokumen manajemen proyek dengan dua edisi panduan PMI, lalu membandingkan keduanya:
 - **PMBOK edisi ke-4 (2008)** berbasis proses: 5 *process group* dan 9 *knowledge area*.
 - **PMBOK edisi ke-7 (2021)** berbasis prinsip: 12 prinsip dan 8 *performance domain*, dengan nilai (*value*) sebagai ukuran keberhasilan (slide 04 hlm 5).
 
@@ -39,7 +40,7 @@ Dalam simulasi ini penulis berperan sebagai Project Manager. Tugasnya menyusun d
 
 ## 1.3 Asumsi simulasi
 
-Soal hanya memberi gambaran umum kasus. Karena itu, penulis menetapkan sejumlah asumsi, dan semua dokumen di laporan ini memakai asumsi yang sama.
+Soal hanya memberi gambaran umum kasus. Karena itu, penyusun menetapkan sejumlah asumsi, dan semua dokumen di laporan ini memakai asumsi yang sama.
 
 **Tabel 1.1 Asumsi utama simulasi**
 
@@ -48,7 +49,7 @@ Soal hanya memberi gambaran umum kasus. Karena itu, penulis menetapkan sejumlah 
 | Periode proyek | Senin, 4 Januari 2027 sampai Rabu, 30 Juni 2027 (± 25,5 minggu), dengan tujuh *milestone* M0–M6 |
 | Lingkup | Dua rilis. **Rilis 1** (31 Maret 2027): Kota Yogyakarta, aplikasi Android dan dasbor web, tanpa AI. **Rilis 2** (15 Juni 2027): seluruh DIY, ditambah aplikasi iOS dan rekomendasi AI. Keputusan lanjut atau berhenti diambil pada **M4** (30 April 2027) |
 | Anggaran | Rp 15 miliar, termasuk cadangan risiko Rp 1,5 miliar; dibiayai modal sendiri perusahaan |
-| Organisasi | Sponsor: Direktur Utama. Project Manager: penulis. Komite Pengarah: Direktur Utama, Direktur Keuangan, Kepala Legal & Compliance, Kepala Infrastructure & Cybersecurity, dan PM. Tim proyek ± 50 orang dari enam divisi |
+| Organisasi | Sponsor: Direktur Utama. Project Manager: Eka Putra Kurnia (anggota kelompok). Komite Pengarah: Direktur Utama, Direktur Keuangan, Kepala Legal & Compliance, Kepala Infrastructure & Cybersecurity, dan PM. Tim proyek ± 50 orang dari enam divisi |
 | Mitra | Mitra kurir, mitra pembayaran berizin (*wallet* berjalan di bawah izin uang elektronik milik mitra ini), penyedia *cloud*, konsultan keamanan, dan paguyuban UMKM di Yogyakarta |
 | Prinsip tanpa riba | Kebijakan perusahaan: (P1) modal sendiri tanpa pinjaman berbunga; (P2) *wallet* tanpa *paylater* dan cicilan berbunga; (P3) dana saldo pengguna ditempatkan di bank syariah; (P4) pendapatan berupa upah jasa (*ujrah*) yang besarnya terbuka sejak awal, tanpa denda |
 | Asumsi teknis | Aplikasi lintas platform; arsitektur modular; *cloud* dengan pusat data di Indonesia dan cadangan di lokasi lain; integrasi mitra diuji di *sandbox*; AI memakai data Rilis 1 yang dianonimkan (rinciannya di Scope Statement, Bagian 2.3.2) |
@@ -69,7 +70,14 @@ Dengan begitu, perbedaan di Bab 4 berasal dari **cara berpikir** kedua edisi, bu
 
 **Alat bantu:**
 - Jadwal proyek dimasukkan ke **ClickUp**, lengkap dengan ketergantungan antartugas. Tampilan Gantt-nya dapat dibuka di https://sharing.clickup.com/1100310000031077/g/h/z8q7hb3nb5-618/c5be485d10fbe8c
-- **Pernyataan penggunaan AI.** Penyusunan laporan ini dibantu AI (Claude, Anthropic) untuk menelusuri rujukan dalam materi kuliah, menyusun draf, dan memeriksa konsistensi data antardokumen. Keputusan-keputusan proyek dan sikap dalam analisis komparatif ditetapkan penulis, dan isi refleksi manajerial (Bab 5) berasal dari pendapat penulis sendiri.
+- **Pernyataan penggunaan AI.** Penyusunan laporan ini dibantu AI (Claude, Anthropic) untuk menelusuri rujukan dalam materi kuliah, menyusun draf, dan memeriksa konsistensi data antardokumen. Keputusan-keputusan proyek dan sikap dalam analisis komparatif ditetapkan penyusun. Refleksi manajerial (Bab 5) disusun per anggota kelompok dan menjadi tanggung jawab masing-masing anggota.
+
+**Tabel 1.2 Pembagian kerja kelompok**
+
+| Anggota | NIM | Kontribusi |
+|---|---|---|
+| Eka Putra Kurnia | 25.55.2927 | Penyusunan Bab 1–4 dan Bab 6 (sepuluh dokumen PMBOK 4, penerapan PMBOK 7, analisis komparatif); jadwal proyek di ClickUp; perakitan laporan; refleksi manajerial (Bagian 5.1) |
+| Cucu Tri Eka Yuliana | 25.55.2844 | Refleksi manajerial (Bagian 5.2) |
 
 ## 1.5 Sistematika laporan
 
@@ -79,7 +87,7 @@ Dengan begitu, perbedaan di Bab 4 berasal dari **cara berpikir** kedua edisi, bu
   - perencanaan: Team Contract, Project Scope Statement, WBS, jadwal, Risk Register.
 - **Bab 3** menerapkan PMBOK 7: lima prinsip dan *Value Delivery System*, domain Stakeholder dan Team, serta domain Planning beserta ketidakpastian.
 - **Bab 4** membandingkan kedua edisi dalam sembilan dimensi, lalu merumuskan sintesis dan rekomendasi.
-- **Bab 5** memuat refleksi manajerial penulis.
+- **Bab 5** memuat refleksi manajerial setiap anggota kelompok.
 - **Bab 6** berisi kesimpulan.
 
 Laporan ditutup dengan glosarium, daftar pustaka, dan lampiran.

@@ -1,6 +1,10 @@
 # Bab 5 — Refleksi Manajerial
 
-> Berkas kerja UTS (tidak ikut ke laporan). Disusun dari jawaban penulis (13 Nov 2026). Isi dan pendapat dari penulis; Claude hanya mengurutkan, menambah kata sambung, dan membetulkan ejaan. Kalimat tambahan Claude (disetujui penulis): rujukan ke Risk Register, NPV, kriteria K1, kasus PDNS 2, contoh ahli, data jadwal di paragraf jangka waktu, dan kalimat tentang Team Contract dan RACI.
+Refleksi manajerial disusun per anggota kelompok.
+
+## 5.1 Refleksi – Eka Putra Kurnia
+
+> Berkas kerja UTS (tidak ikut ke laporan). Bagian 5.1 disusun dari jawaban Eka Putra Kurnia (13 Nov 2026). Isi dan pendapat dari penulisnya; Claude hanya mengurutkan, menambah kata sambung, dan membetulkan ejaan. Kalimat tambahan Claude (disetujui penulisnya): rujukan ke Risk Register, NPV, kriteria K1, kasus PDNS 2, contoh ahli, data jadwal di paragraf jangka waktu, dan kalimat tentang Team Contract dan RACI.
 
 Sebelum mengerjakan tugas ini, saya masih baru mempelajari manajemen proyek TI. Setelah menyusun sepuluh dokumen PMBOK 4 dan menerapkan PMBOK 7 pada kasus Nusantara Express, ternyata seorang PM harus banyak menyusun dokumen proyek dan berkoordinasi dengan banyak pihak, misalnya stakeholder. Tugasnya lebih ke aspek manajerial daripada teknis, dan seorang PM harus banyak bertanya kepada ahli.
 
@@ -11,3 +15,15 @@ Kedua, tentang layanan *cloud*. Menurut saya, layanan *cloud* adalah fungsi vita
 Ketiga, tentang jangka waktu. Menurut saya, jangka waktu pengembangan enam bulan itu terlalu cepat dan dipaksakan. Hal ini juga terlihat dari jadwal yang saya susun sendiri: 24 dari 42 paket kerja tidak punya waktu longgar sama sekali, pembangunan Rilis 1 bertepatan dengan bulan Ramadan lalu langsung disusul cuti Idulfitri, dan Rilis 2 hanya punya 19 hari kerja untuk membangun AI dan aplikasi iOS. Mungkin perlu dilakukan studi banding dengan proyek serupa dan bertanya kepada ahli sebelum target waktu ditetapkan. Namun, ini hanya pandangan saya sebagai orang awam yang belum pernah menjadi PM.
 
 Karena dalam sebuah proyek banyak aspek yang harus diperhatikan, hal pertama yang akan saya lakukan bila menjadi PM proyek ini adalah menemui para ahli untuk berkonsultasi, misalnya ahli keuangan syariah dan ahli infrastruktur, karena seorang PM belum tentu ahli dalam semua hal. Dokumen proyek tidak bisa dikerjakan PM sendiri, begitu pula proyeknya. PM butuh sebuah tim yang bisa membantunya dalam segala bidang. Karena itu, dokumen seperti Team Contract dan matriks RACI menjadi penting, supaya setiap bagian pekerjaan punya penanggung jawab yang jelas.
+
+## 5.2 Refleksi – Cucu Tri Eka Yuliana
+
+> Berkas kerja UTS (tidak ikut ke laporan). Bagian 5.2 adalah teks dari Cucu Tri Eka Yuliana (diterima 19 Nov 2026), dimasukkan apa adanya tanpa perubahan isi.
+
+Mengerjakan simulasi proyek Nusantara Express dengan dua pendekatan berbeda memberikan pemahaman baru bagi saya mengenai cara kerja manajemen proyek di dunia nyata. Sebelumnya, saya mengira keberhasilan proyek TI hanya bergantung pada kecanggihan aplikasi dan kecepatan tim pengembang menyelesaikan fitur. Namun, setelah menyusun dokumen dari tahap pra-inisiasi hingga analisis komparatif, saya menyadari bahwa aspek non-teknis justru sering menjadi penentu utama berhasil atau tidaknya sebuah proyek.
+
+Kesulitan pertama yang saya rasakan adalah menjaga konsistensi antar-dokumen pada kerangka PMBOK 4th Edition. Setiap perubahan kecil pada satu dokumen ternyata berdampak berantai ke dokumen lainnya. Misalnya, ketika menentukan target waktu dan pembagian dua rilis di Business Case, hal itu harus selaras dengan batasan di Project Charter, paket kerja di WBS, ketergantungan tugas di Gantt Chart, hingga identifikasi risiko di Risk Register. Menyusun jadwal di ClickUp juga cukup menantang karena harus memperhitungkan hari libur nasional dan cuti bersama, serta memastikan logika urutan pekerjaan (predecessor) masuk akal agar jalur kritisnya akurat.
+
+Kesulitan kedua adalah memetakan sudut pandang PMBOK 7th Edition ke dalam kasus yang sama tanpa terjebak pada anggapan bahwa PMBOK 7 sama dengan Agile. Awalnya, cukup membingungkan untuk membedakan mana bagian proyek yang harus dikunci secara ketat dan mana yang boleh lentur. Melalui studi kasus ini, saya belajar bahwa untuk fitur yang berkaitan dengan transaksi keuangan (digital wallet), keamanan data, dan kepatuhan regulasi, pendekatan prediktif yang ketat mutlak diperlukan. Sebaliknya, untuk fitur rekomendasi AI dan antarmuka UMKM yang kebutuhannya masih dinamis, pendekatan adaptif jauh lebih masuk akal.
+
+Selain itu, bagian yang paling membuka wawasan bagi saya adalah menyadari bahwa proyek bisa saja selesai tepat waktu dan sesuai anggaran, tetapi tetap gagal secara bisnis jika tidak memberikan nilai (value) bagi penggunanya. Pada kasus ini, risiko terbesarnya bukanlah kegagalan sistem, melainkan rendahnya adopsi UMKM dan pembeli. Karena itu, adanya gerbang evaluasi di M4 dan pelibatan Paguyuban UMKM sejak awal menjadi pelajaran penting bahwa seorang manajer proyek tidak boleh hanya fokus pada penyelesaian output teknis, tetapi juga harus memastikan hasil proyek benar-benar bermanfaat dan dipakai oleh pengguna.

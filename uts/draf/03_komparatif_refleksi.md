@@ -152,7 +152,7 @@ Hasil kesembilan dimensi menunjukkan bahwa **PMBOK 7 tidak menggantikan PMBOK 4*
 | Cara kerja di dalam tim modul | PMBOK 7 | Tim lintas fungsi lebih cepat belajar |
 | Ketidakpastian ambigu dan kompleks (adopsi) | PMBOK 7 | Tidak bisa ditangani satu tindakan mitigasi |
 
-**Sikap penulis [USULAN]:**
+**Sikap penyusun [USULAN]:**
 
 > PMBOK 4 untuk bagian yang mengurus **uang dan aturan**; PMBOK 7 untuk bagian yang mengurus **manusia dan hal yang belum pasti**. Kesalahan terbesar bukan salah memilih edisi, melainkan **menyamakan PMBOK 7 dengan Agile**. PMBOK 7 sendiri meminta pendekatan prediktif untuk bagian yang berisiko dan diatur ketat.
 
@@ -165,7 +165,7 @@ Arah perkembangan PMBOK pun mendukung sikap ini. PMBOK edisi ke-8 (2025) memangk
 ## 4.4 Keterbatasan analisis
 
 1. Analisis ini adalah **simulasi**. Data perusahaan, tokoh, mitra, dan angka keuangan bersifat fiktif atau perkiraan, sehingga penilaian di atas belum diuji dengan pelaksanaan nyata.
-2. Kedua bab disusun oleh penulis yang sama dan **berurutan**: Bab 2 dulu, lalu Bab 3. Akibatnya, sebagian cara berpikir PMBOK 7 sudah ikut masuk ke dokumen PMBOK 4, misalnya pemisahan kriteria di Charter dan gerbang M4. Perbandingannya jadi tidak sepenuhnya "murni". Namun justru di situ terlihat bahwa kedua edisi mudah dipadukan.
+2. Kedua bab disusun oleh penyusun yang sama dan **berurutan**: Bab 2 dulu, lalu Bab 3. Akibatnya, sebagian cara berpikir PMBOK 7 sudah ikut masuk ke dokumen PMBOK 4, misalnya pemisahan kriteria di Charter dan gerbang M4. Perbandingannya jadi tidak sepenuhnya "murni". Namun justru di situ terlihat bahwa kedua edisi mudah dipadukan.
 3. Tanggal hari libur dan Ramadan 2027 masih berupa perkiraan, menunggu penetapan resmi pemerintah.
 
 ---
